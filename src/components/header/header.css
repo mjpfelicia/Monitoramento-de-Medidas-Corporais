@@ -1,0 +1,16 @@
+.cabecalho {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .cabecalho h1 {
+    color: var(--heading-color);
+    margin-bottom: 0.5rem;
+  }
+  
+  .cabecalho p {
+    color: var(--text-color);
+    font-size: 1.25rem;
+    margin-top: 0;
+  }
+  

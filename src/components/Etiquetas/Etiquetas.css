@@ -1,0 +1,50 @@
+.etiquetas {
+  display: flex;
+  flex-direction: column;
+}
+
+.etiqueta {
+  margin-bottom: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.3rem;
+  font-size: 0.75rem;
+  position: absolute;
+  pointer-events: none;
+}
+
+.etiqueta-peitoral {
+  top: 4.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.etiqueta-abdomen {
+  top: 6.5rem;
+  left: 50%;
+  transform: translateX(-52%);
+}
+
+.etiqueta-cintura {
+  top: 8rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.etiqueta-quadril {
+  top: 10rem;
+  left: 50%;
+  transform: translateX(-52%);
+}
+
+.etiqueta-coxa {
+  top: 12.5rem;
+  left: 50%;
+  transform: translateX(-94%);
+}
+
+.etiqueta-braco {
+  top: 2.5rem;
+  left: 54%;
+
+}

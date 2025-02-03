@@ -1,0 +1,13 @@
+.icone-fit-person {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 1.25rem 0;
+    flex-wrap: wrap;
+  }
+  
+  .icone-img {
+    width: 12rem;
+    height: 24rem;
+  }
+  

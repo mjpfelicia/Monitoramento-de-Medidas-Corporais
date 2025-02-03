@@ -1,0 +1,9 @@
+
+const Cabecalho = () => (
+  <header>
+    <h1>Projeto de Monitoramento de Medidas Corporais</h1>
+    <p>Acompanhe a evolução das suas medidas corporais ao longo do tempo.</p>
+  </header>
+);
+
+export default Cabecalho;

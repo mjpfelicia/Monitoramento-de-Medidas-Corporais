@@ -1,0 +1,21 @@
+.dicas-section {
+    margin-top: 2rem;
+    text-align: left;
+  }
+  
+  .dicas-section h2 {
+    color: var(--heading-color);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .dicas-section ul {
+    list-style-type: disc;
+    margin-left: 1.25rem;
+    padding-left: 1rem;
+  }
+  
+  .dicas-section li {
+    margin-bottom: 0.5rem;
+  }
+  
