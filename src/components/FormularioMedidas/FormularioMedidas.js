@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useForm, Controller, useFieldArray } from 'react-hook-form';
 import Grafico from '../Grafico/Grafico';
+import Modal from 'react-modal';
+import ObjetivosPessoais from '../ObjetivosPessoais/ObjetivosPessoais';
 import './FormularioMedidas.css';
 
 const FormularioMedidas = () => {
@@ -15,9 +17,15 @@ const FormularioMedidas = () => {
   });
 
   const [dados, setDados] = useState([]);
+  const [objetivos, setObjetivos] = useState(null);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const adicionarLinha = () => {
     append({ data: '', peitoral: '', abdomen: '', cintura: '', quadril: '', coxa: '', braco: '' });
+  };
+
+  const adicionarObjetivo = (novoObjetivo) => {
+    setObjetivos(novoObjetivo);
   };
 
   const onSubmit = (data) => {
@@ -65,10 +73,33 @@ const FormularioMedidas = () => {
             </tbody>
           </table>
         </div>
-        <button type="button" onClick={adicionarLinha}>Adicionar Linha</button>
         <button type="submit">Enviar</button>
+        <button type="button" onClick={adicionarLinha}>Adicionar Linha</button>
+        <button type="button" onClick={() => setModalIsOpen(true)}>Definir Objetivos Pessoais</button>
+       
       </form>
       <Grafico dados={dados} />
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={() => setModalIsOpen(false)}
+        contentLabel="Objetivos Pessoais"
+      >
+        <h2>Defina seus Objetivos Pessoais</h2>
+        <ObjetivosPessoais adicionarObjetivo={adicionarObjetivo} />
+        {objetivos && (
+          <div className="objetivos-exibidos">
+            <h2>Seus Objetivos</h2>
+            <ul>
+              {['peitoral', 'abdomen', 'cintura', 'quadril', 'coxa', 'braco'].map((field) => (
+                <li key={field}>
+                  {field.charAt(0).toUpperCase() + field.slice(1)}: {objetivos[field]} cm
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        <button onClick={() => setModalIsOpen(false)}>Fechar</button>
+      </Modal>
     </div>
   );
 };
