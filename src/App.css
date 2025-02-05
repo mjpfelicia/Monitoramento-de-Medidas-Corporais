@@ -10,6 +10,15 @@
   --container-width: 90%;
   --max-width: 50rem;
   --table-font-size: 1rem;
+  --button-bg-color: #4CAF50;
+  --button-hover-bg-color: #45a049;
+  --button-text-color: #fff;
+  --button-hover-text-color: #fff;
+  --modal-bg-color: #fff;
+  --modal-box-shadow: rgba(0, 0, 0, 0.1);
+  --menu-background-color: #333;
+  --menu-link-color: white;
+  --button-hover-bg-color-alt: #003f7f;
 }
 
 body {

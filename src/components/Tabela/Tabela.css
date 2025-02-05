@@ -30,14 +30,14 @@ button {
     margin: 1.25rem auto;
     padding: 0.625rem 1.25rem;
     background-color: var(--heading-color);
-    color: #fff;
+    color: var(--button-text-color);
     border: none;
     border-radius: 0.3125rem;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #003f7f;
+    background-color: var(--button-hover-bg-color-alt);
 }
 
 ul {

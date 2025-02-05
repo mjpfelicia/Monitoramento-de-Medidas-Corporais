@@ -26,9 +26,7 @@ table {
     font-size: var(--table-font-size);
 }
 
-
-th,
-td {
+th, td {
     border: 0.0625rem solid var(--table-border-color);
     padding: var(--table-padding);
     text-align: center;
@@ -50,14 +48,14 @@ button {
     margin: 1.25rem auto;
     padding: 0.625rem 1.25rem;
     background-color: var(--heading-color);
-    color: #fff;
+    color: var(--button-text-color);
     border: none;
     border-radius: 0.3125rem;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #003f7f;
+    background-color: #003f7f; /* Variável não definida para esta cor */
 }
 
 ul {
@@ -79,9 +77,6 @@ ul {
     height: 24rem;
 }
 
-
-
-
 @media (max-width: 600px) {
 
     table,
@@ -93,8 +88,7 @@ ul {
         display: block;
     }
 
-    th,
-    td {
+    th, td {
         padding: var(--input-padding);
         text-align: right;
         position: relative;
