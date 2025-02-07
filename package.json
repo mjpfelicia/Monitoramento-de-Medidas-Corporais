@@ -20,7 +20,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -44,7 +46,10 @@
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
     "@types/react-modal": "^3.16.3",
+    "gh-pages": "^6.3.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
-  }
+  },
+"homepage": "https://mjpfelicia.github.io/Monitoramento-de-Medidas-Corporais/"
+
 }
