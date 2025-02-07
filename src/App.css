@@ -44,7 +44,7 @@ body {
   width: var(--container-width);
   max-width: var(--max-width);
   margin: 0 auto;
-  background-color: #fff;
+  background-color: var(--table-header-bg-color);
   box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
   border-radius: 0.625rem;
 }
