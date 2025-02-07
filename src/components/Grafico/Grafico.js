@@ -15,8 +15,7 @@ const Grafico = ({ dados }) => {
       >
         <h2>Gráfico de Medidas</h2>
         <ResponsiveContainer width="100%" height={400}>
-          <LineChart data={dados}
-            margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+          <LineChart data={dados} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="data" />
             <YAxis />

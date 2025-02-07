@@ -19,11 +19,11 @@ th {
     background-color: var(--table-header-bg-color);
 }
 
-input[type="text"], input[type="number"] {
+/* input[type="text"], input[type="number"] {
     width: 100%;
     padding: var(--input-padding);
     box-sizing: border-box;
-}
+} */
 
 button {
     display: block;
@@ -43,4 +43,10 @@ button:hover {
 ul {
     list-style-type: disc;
     margin-left: 1.25rem;
+}
+
+.inputForm{
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
 }

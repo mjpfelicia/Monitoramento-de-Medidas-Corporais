@@ -21,6 +21,12 @@
   --button-hover-bg-color-alt: #003f7f;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: var(--font-family);
   background-color: var(--background-color);
@@ -38,13 +44,17 @@ body {
   width: var(--container-width);
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 2.25rem;
   background-color: #fff;
   box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
   border-radius: 0.625rem;
 }
-
-h1, h2 {
-  color: var(--heading-color);
-  text-align: center;
+button {
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  margin: 0.5rem;
+  font-size: 1rem;
 }

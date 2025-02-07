@@ -1,7 +1,7 @@
 import './Dicas.css';
 
 const Dicas = () => (
-  <section>
+  <section className="dicas-section">
     <h2>Dicas para Medir</h2>
     <ul>
       <li>Use uma fita métrica flexível.</li>
@@ -12,4 +12,3 @@ const Dicas = () => (
 );
 
 export default Dicas;
-
