@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Monitoramento-de-Medidas-Corporais/static/css/main.cf13d713.css",
+    "main.js": "/Monitoramento-de-Medidas-Corporais/static/js/main.63eedb42.js",
+    "static/js/488.15c9c649.chunk.js": "/Monitoramento-de-Medidas-Corporais/static/js/488.15c9c649.chunk.js",
+    "static/media/corpo.png": "/Monitoramento-de-Medidas-Corporais/static/media/corpo.ec3593073b8c1d6d623e.png",
+    "index.html": "/Monitoramento-de-Medidas-Corporais/index.html",
+    "main.cf13d713.css.map": "/Monitoramento-de-Medidas-Corporais/static/css/main.cf13d713.css.map",
+    "main.63eedb42.js.map": "/Monitoramento-de-Medidas-Corporais/static/js/main.63eedb42.js.map",
+    "488.15c9c649.chunk.js.map": "/Monitoramento-de-Medidas-Corporais/static/js/488.15c9c649.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cf13d713.css",
+    "static/js/main.63eedb42.js"
+  ]
+}
