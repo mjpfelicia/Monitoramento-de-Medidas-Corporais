@@ -13,12 +13,12 @@ const Grafico = ({ dados }) => {
         <ResponsiveContainer width="100%" height={400}>
           <LineChart data={dados} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="data" />
-            <YAxis />
+            <XAxis dataKey="data" fontSize={12} />
+            <YAxis fontSize={12} />
             <Tooltip />
-            <Legend />
+            <Legend fontSize={12} />
             {['peitoral', 'abdomen', 'cintura', 'quadril', 'coxa', 'braco'].map((key, index) => (
-              <Line key={index} type="monotone" dataKey={key} stroke={getColor(index)} />
+              <Line key={index} type="monotone" dataKey={key} stroke={getColor(index)} strokeOpacity={0.8} />
             ))}
           </LineChart>
         </ResponsiveContainer>
@@ -29,7 +29,7 @@ const Grafico = ({ dados }) => {
 };
 
 const getColor = (index) => {
-  const colors = ['#8884d8', '#82ca9d', '#ffc658', '#ff7300', '#387908', '#ff0000'];
+  const colors = ['#8884d8', '#82ca9d', '#ffc658', '#ff7300', '#387908', '#ff0000', '#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd'];
   return colors[index % colors.length];
 };
 

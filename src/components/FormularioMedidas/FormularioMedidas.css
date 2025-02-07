@@ -8,6 +8,12 @@
     max-width: 800px;
     margin: 20px auto;
   }
+  .container-medidas {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-top: 8rem;
+  }
   
   .tabela-container {
     overflow-x: auto;
