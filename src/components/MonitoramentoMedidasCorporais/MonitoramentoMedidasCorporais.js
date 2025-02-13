@@ -11,6 +11,7 @@ const MonitoramentoMedidasCorporais = () => (
     <Cabecalho />
     <IconeFitness />
     <Dicas />
+  
   </div>
 );
 

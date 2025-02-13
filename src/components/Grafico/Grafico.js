@@ -1,36 +1,110 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { Line } from 'react-chartjs-2';
+import { Chart, registerables } from 'chart.js';
+import 'chartjs-adapter-date-fns';
+
+Chart.register(...registerables);
 
 const Grafico = ({ dados }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const data = {
+    labels: dados ? dados.map(dado => dado.data) : [],
+    datasets: [
+      {
+        label: 'Peitoral (cm)',
+        data: dados ? dados.map(dado => dado.peitoral) : [],
+        borderColor: '#8884d8',
+        backgroundColor: 'rgba(136, 132, 216, 0.2)',
+        fill: true,
+        tension: 0.4,
+      },
+      {
+        label: 'Abdômen (cm)',
+        data: dados ? dados.map(dado => dado.abdomem) : [],
+        borderColor: '#82ca9d',
+        backgroundColor: 'rgba(130, 202, 157, 0.2)',
+        fill: true,
+        tension: 0.4,
+      },
+      {
+        label: 'Cintura (cm)',
+        data: dados ? dados.map(dado => dado.cintura) : [],
+        borderColor: '#ffc658',
+        backgroundColor: 'rgba(255, 198, 88, 0.2)',
+        fill: true,
+        tension: 0.4,
+      },
+      {
+        label: 'Quadril (cm)',
+        data: dados ? dados.map(dado => dado.quadril) : [],
+        borderColor: '#ff7300',
+        backgroundColor: 'rgba(255, 115, 0, 0.2)',
+        fill: true,
+        tension: 0.4,
+      },
+      {
+        label: 'Coxa (cm)',
+        data: dados ? dados.map(dado => dado.coxa) : [],
+        borderColor: '#387908',
+        backgroundColor: 'rgba(56, 121, 8, 0.2)',
+        fill: true,
+        tension: 0.4,
+      },
+      {
+        label: 'Braço (cm)',
+        data: dados ? dados.map(dado => dado.braco) : [],
+        borderColor: '#ff0000',
+        backgroundColor: 'rgba(255, 0, 0, 0.2)',
+        fill: true,
+        tension: 0.4,
+      },
+    ],
+  };
+
+  const options = {
+    responsive: true,
+    scales: {
+      x: {
+        type: 'time',
+        time: {
+          unit: 'day',
+        },
+        title: {
+          display: true,
+          text: 'Data',
+        },
+      },
+      y: {
+        beginAtZero: true,
+        title: {
+          display: true,
+          text: 'Medidas (cm)',
+        },
+      },
+    },
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+      tooltip: {
+        mode: 'index',
+        intersect: false,
+      },
+    },
+  };
 
   return (
     <div>
       <button onClick={() => setModalIsOpen(true)}>Ver Gráfico</button>
       <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)} contentLabel="Gráfico de Medidas">
         <h2>Gráfico de Medidas</h2>
-        <ResponsiveContainer width="100%" height={400}>
-          <LineChart data={dados} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="data" fontSize={12} />
-            <YAxis fontSize={12} />
-            <Tooltip />
-            <Legend fontSize={12} />
-            {['peitoral', 'abdomen', 'cintura', 'quadril', 'coxa', 'braco'].map((key, index) => (
-              <Line key={index} type="monotone" dataKey={key} stroke={getColor(index)} strokeOpacity={0.8} />
-            ))}
-          </LineChart>
-        </ResponsiveContainer>
+        <Line data={data} options={options} />
         <button onClick={() => setModalIsOpen(false)}>Fechar</button>
       </Modal>
     </div>
   );
-};
-
-const getColor = (index) => {
-  const colors = ['#8884d8', '#82ca9d', '#ffc658', '#ff7300', '#387908', '#ff0000', '#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd'];
-  return colors[index % colors.length];
 };
 
 export default Grafico;

@@ -7,6 +7,7 @@ import Grafico from './components/Grafico/Grafico';
 import NotFound from './components/NotFound/NotFound';
 import Login from './components/Login/Login';
 import Registrar from './components/Registrar/Register';
+import Ajuda from './components/Ajuda/Ajuda';
 
 
 
@@ -24,6 +25,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
           <Route path="/login" element={<Login />} />
           <Route path="/Registrar" element={<Registrar />} />
+          <Route path="/ajuda" element={<Ajuda />} />
         </Routes>
       </div>
     </Router>

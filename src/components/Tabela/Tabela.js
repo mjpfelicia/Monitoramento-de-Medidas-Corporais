@@ -1,15 +1,35 @@
+// TabelaMedidas.js
+import React from 'react';
 
-const defaultDate = new Date().toISOString().split('T')[0];
-const LinhaTabela = ({ index }) => (
-  <tr>
-    <td data-label="Data"><input className="inputForm" type="date" name={`data${index}`} defaultValue={`${defaultDate}`} placeholder="" /></td>
-    <td data-label="Peitoral (cm)"><input className="inputForm" type="number" name={`peitoral${index}`} placeholder="" /></td>
-    <td data-label="Abdômen (cm)"><input className="inputForm" type="number" name={`abdomen${index}`} placeholder="" /></td>
-    <td data-label="Cintura (cm)"><input className="inputForm" type="number" name={`cintura${index}`} placeholder="" /></td>
-    <td data-label="Quadril (cm)"><input className="inputForm" type="number" name={`quadril${index}`} placeholder="" /></td>
-    <td data-label="Coxa (cm)"><input className="inputForm" type="number" name={`coxa${index}`} placeholder="" /></td>
-    <td data-label="Braço (cm)"><input className="inputForm" type="number" name={`braco${index}`} placeholder="" /></td>
-  </tr>
+const TabelaMedidas = ({ linhas, onInputChange, onKeyDown }) => (
+  <div className="tabela-container">
+    <table id="tabela-medidas">
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Peitoral (cm)</th>
+          <th>Abdômen (cm)</th>
+          <th>Cintura (cm)</th>
+          <th>Quadril (cm)</th>
+          <th>Coxa (cm)</th>
+          <th>Braço (cm)</th>
+        </tr>
+      </thead>
+      <tbody>
+        {linhas.map((linha, index) => (
+          <tr key={index}>
+            <td><input type="date" name="data" onChange={(event) => onInputChange(index, event)} onKeyDown={(event) => onKeyDown(event, index)} /></td>
+            <td><input type="number" name="peitoral" onChange={(event) => onInputChange(index, event)} onKeyDown={(event) => onKeyDown(event, index)} /></td>
+            <td><input type="number" name="abdomem" onChange={(event) => onInputChange(index, event)} onKeyDown={(event) => onKeyDown(event, index)} /></td>
+            <td><input type="number" name="cintura" onChange={(event) => onInputChange(index, event)} onKeyDown={(event) => onKeyDown(event, index)} /></td>
+            <td><input type="number" name="quadril" onChange={(event) => onInputChange(index, event)} onKeyDown={(event) => onKeyDown(event, index)} /></td>
+            <td><input type="number" name="coxa" onChange={(event) => onInputChange(index, event)} onKeyDown={(event) => onKeyDown(event, index)} /></td>
+            <td><input type="number" name="braco" onChange={(event) => onInputChange(index, event)} onKeyDown={(event) => onKeyDown(event, index)} /></td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
 );
 
-export default LinhaTabela;
+export default TabelaMedidas;

@@ -19,3 +19,7 @@
 .dicas-section li {
   margin-bottom: 0.5rem;
 }
+.li__dicas {
+  color:var(--button-bg-color)!important;
+  font-size: 1.5rem;
+}

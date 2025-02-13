@@ -16,9 +16,17 @@
   --button-hover-text-color: #fff;
   --modal-bg-color: #fff;
   --modal-box-shadow: rgba(0, 0, 0, 0.1);
+  --menu-hover-color: #007bff;
   --menu-background-color: #333;
   --menu-link-color: white;
   --button-hover-bg-color-alt: #003f7f;
+  --form-border-color: #e3e3e3;
+  --form-box-shadow: rgba(0, 0, 0, 0.1);
+  --form-background-color: #ffffff;
+  --input-border-color: #ccc;
+  --input-focus-border-color: #007bff;
+  --input-background-color: #f9f9f9;
+  --error-message-color: red;
 }
 
 * {

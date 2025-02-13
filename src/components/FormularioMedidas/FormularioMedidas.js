@@ -1,7 +1,9 @@
+// FormularioMedidas.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './FormularioMedidas.css';
 import Grafico from '../Grafico/Grafico';
+import TabelaMedidas from '../Tabela/Tabela';
 
 const FormularioMedidas = () => {
   const [linhas, setLinhas] = useState([{}]);
@@ -48,34 +50,7 @@ const FormularioMedidas = () => {
   return (
     <div className="container-medidas">
       <form id="formulario-medidas">
-        <div className="tabela-container">
-          <table id="tabela-medidas">
-            <thead>
-              <tr>
-                <th>Data</th>
-                <th>Peitoral (cm)</th>
-                <th>Abdômen (cm)</th>
-                <th>Cintura (cm)</th>
-                <th>Quadril (cm)</th>
-                <th>Coxa (cm)</th>
-                <th>Braço (cm)</th>
-              </tr>
-            </thead>
-            <tbody>
-              {linhas.map((linha, index) => (
-                <tr key={index}>
-                  <td><input type="date" name="data" onChange={(event) => handleInputChange(index, event)} onKeyDown={(event) => handleKeyDown(event, index)} /></td>
-                  <td><input type="number" name="peitoral" onChange={(event) => handleInputChange(index, event)} onKeyDown={(event) => handleKeyDown(event, index)} /></td>
-                  <td><input type="number" name="abdomem" onChange={(event) => handleInputChange(index, event)} onKeyDown={(event) => handleKeyDown(event, index)} /></td>
-                  <td><input type="number" name="cintura" onChange={(event) => handleInputChange(index, event)} onKeyDown={(event) => handleKeyDown(event, index)} /></td>
-                  <td><input type="number" name="quadril" onChange={(event) => handleInputChange(index, event)} onKeyDown={(event) => handleKeyDown(event, index)} /></td>
-                  <td><input type="number" name="coxa" onChange={(event) => handleInputChange(index, event)} onKeyDown={(event) => handleKeyDown(event, index)} /></td>
-                  <td><input type="number" name="braco" onChange={(event) => handleInputChange(index, event)} onKeyDown={(event) => handleKeyDown(event, index)} /></td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <TabelaMedidas linhas={linhas} onInputChange={handleInputChange} onKeyDown={handleKeyDown} />
         <button type="button" onClick={adicionarLinha}>Adicionar Medidas</button>
         <button type="button" onClick={salvarMedidas}>Salvar Medidas</button>
         <button type="button" onClick={voltarPagina}>Voltar para Home</button>

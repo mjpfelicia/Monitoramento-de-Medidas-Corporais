@@ -1,24 +1,28 @@
+:root {
+  --error-message-color: red;
+}
+
 /* Login.css */
 .login-container {
-  max-width: 900px;
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: 2rem;
-  border: 1px solid #e3e3e3;
+  border: 1px solid var(--table-border-color);
   border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  background-color: #ffffff;
+  box-shadow: 0 10px 20px var(--modal-box-shadow);
+  background-color: var(--modal-bg-color);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   text-align: center;
 }
 
 .login-container:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 15px 25px var(--modal-box-shadow);
 }
 
 .login-container h2 {
   margin-bottom: 1.5rem;
-  color: #333;
+  color: var(--heading-color);
   font-size: 1.8rem;
   font-weight: bold;
 }
@@ -31,7 +35,7 @@
 
 .login-container label {
   margin-bottom: 0.5rem;
-  color: #555;
+  color: var(--text-color);
   font-size: 1rem;
 }
 
@@ -42,13 +46,13 @@
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 1rem;
-  background-color: #f9f9f9;
+  background-color: var(--background-color);
   transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 
 .login-container input:focus {
-  background-color: #fff;
-  border-color: #007bff;
+  background-color: var(--modal-bg-color);
+  border-color: var(--heading-color);
   outline: none;
 }
 
@@ -57,37 +61,37 @@
   padding: 0.75rem;
   border: none;
   border-radius: 8px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .login-container button:hover {
-  background-color: #0056b3;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--button-hover-bg-color-alt);
+  box-shadow: 0 5px 10px var(--modal-box-shadow);
 }
 
 .login-container p {
   margin-top: 1rem;
-  color: #666;
+  color: var(--text-color);
 }
 
 .login-container p a {
-  color: #007bff;
+  color: var(--button-bg-color);
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease-in-out;
 }
 
 .login-container p a:hover {
-  color: #0056b3;
+  color: var(--button-hover-bg-color-alt);
   text-decoration: underline;
 }
 
 .error-message {
-  color: red;
+  color: var(--error-message-color);
   text-align: center;
   margin-bottom: 1rem;
   font-size: 1rem;
