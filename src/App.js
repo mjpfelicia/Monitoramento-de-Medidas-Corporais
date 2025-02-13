@@ -4,6 +4,12 @@ import MonitoramentoMedidasCorporais from './components/MonitoramentoMedidasCorp
 import FormularioMedidas from './components/FormularioMedidas/FormularioMedidas';
 import ObjetivosPessoais from './components/ObjetivosPessoais/ObjetivosPessoais';
 import Grafico from './components/Grafico/Grafico';
+import NotFound from './components/NotFound/NotFound';
+import Login from './components/Login/Login';
+import Registrar from './components/Registrar/Register';
+
+
+
 import './App.css';
 
 function App() {
@@ -15,6 +21,9 @@ function App() {
           <Route path="/grafico" element={<Grafico />} />
           <Route path="/objetivos" element={<ObjetivosPessoais />} />
           <Route path="/formulario" element={<FormularioMedidas />} />
+          <Route path="*" element={<NotFound />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/Registrar" element={<Registrar />} />
         </Routes>
       </div>
     </Router>

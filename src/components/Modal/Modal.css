@@ -1,0 +1,48 @@
+/* src/components/Modal/Modal.css */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: var(--fc-modal-color);
+    pointer-events: auto;
+    background-color: var(--fc-modal-bg);
+    background-clip: padding-box;
+    border: var(--fc-modal-border-width) solid var(--fc-modal-border-color);
+    border-radius: var(--fc-modal-border-radius);
+    outline: 0
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  @keyframes slide-down {
+    from {
+      transform: translateY(-20%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  

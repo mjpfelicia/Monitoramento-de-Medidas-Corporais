@@ -11,18 +11,52 @@
   padding: 0;
   display: flex;
   justify-content: flex-end;
+  align-items: center; /* Alinhar os itens verticalmente */
 }
 
 .menu-nav ul li {
   margin: 0 1rem;
+  display: flex;
+  align-items: center; /* Garantir que os itens dentro de li estejam alinhados */
 }
 
-.menu-nav ul li a {
+.menu-nav ul li a, .menu-nav ul li button {
   color: var(--menu-link-color);
   text-decoration: none;
   font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  height: 2.5rem; /* Altura consistente */
 }
 
-.menu-nav ul li a:hover {
+.menu-nav ul li a:hover, .menu-nav ul li button:hover {
   text-decoration: underline;
+  color: #007bff;
+  transition: color 0.3s ease-in-out;
+}
+
+.menu-nav ul li a .icon, .menu-nav ul li button .icon {
+  margin-right: 0.5rem;
+}
+
+.logout-button, .login-button {
+  font-size: 1.2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--menu-link-color);
+  height: 2.5rem; /* Altura consistente */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logout-button:hover, .login-button:hover {
+  color: #007bff;
+  transition: color 0.3s ease-in-out;
 }
