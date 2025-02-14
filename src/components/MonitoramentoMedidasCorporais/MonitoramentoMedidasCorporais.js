@@ -11,8 +11,7 @@ const MonitoramentoMedidasCorporais = () => (
     <Cabecalho />
     <IconeFitness />
     <Dicas />
-  
-  </div>
+   </div>
 );
 
 export default MonitoramentoMedidasCorporais;

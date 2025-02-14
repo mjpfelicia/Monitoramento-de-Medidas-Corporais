@@ -20,7 +20,8 @@
   align-items: center;
 }
 
-.menu-nav ul li a, .menu-nav ul li button {
+.menu-nav ul li a,
+.menu-nav ul li button {
   color: var(--menu-link-color);
   text-decoration: none;
   font-size: 1.2rem;
@@ -34,29 +35,39 @@
   height: 2.5rem;
 }
 
-.menu-nav ul li a:hover, .menu-nav ul li button:hover {
+.menu-nav ul li a:hover,
+.menu-nav ul li button:hover {
   text-decoration: underline;
   color: var(--menu-hover-color);
   transition: color 0.3s ease-in-out;
 }
 
-.menu-nav ul li a .icon, .menu-nav ul li button .icon {
+.menu-nav ul li a .icon,
+.menu-nav ul li button .icon {
+  margin-right: 0.5rem;
+}
+li, button svg {
+  fill: var(--menu-link-color);
+  margin-right: 0.5rem;
+}
+ li a svg {
+  fill: var(--menu-link-color);
   margin-right: 0.5rem;
 }
 
-.logout-button, .login-button {
+.logout-button,
+.login-button {
   font-size: 1.2rem;
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--menu-link-color);
   height: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.logout-button:hover, .login-button:hover {
-  color: var(--menu-hover-color);
+.logout-button:hover,
+.login-button:hover {
   transition: color 0.3s ease-in-out;
 }
