@@ -34,10 +34,13 @@ const FormularioMedidas = () => {
 
   const salvarMedidas = () => {
     const medidasValidas = linhas.filter(linha => linha.data && linha.peitoral && linha.abdomem && linha.cintura && linha.quadril && linha.coxa && linha.braco);
+    
     if (medidasValidas.length > 0) {
       setMedidas((prevMedidas) => [...prevMedidas, ...medidasValidas]);
       alert('Medidas salvas com sucesso!');
       setLinhas([{}]); // Resetar as linhas após salvar
+      setMedidas([]); // Resetar as medidas após salvar'
+      setLinhas([{ data: '', peitoral: '', abdomem: '', cintura: '', quadril: '', coxa: '', braco: '' }]);
     } else {
       alert('Preencha todas as medidas antes de salvar.');
     }

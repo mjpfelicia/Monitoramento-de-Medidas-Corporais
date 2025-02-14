@@ -8,8 +8,7 @@ import NotFound from './components/NotFound/NotFound';
 import Login from './components/Login/Login';
 import Registrar from './components/Registrar/Register';
 import Ajuda from './components/Ajuda/Ajuda';
-
-
+import IMCForm from './components/IMCForm/IMCForm';
 
 import './App.css';
 
@@ -24,8 +23,9 @@ function App() {
           <Route path="/formulario" element={<FormularioMedidas />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/Registrar" element={<Registrar />} />
+          <Route path="/registrar" element={<Registrar />} />
           <Route path="/ajuda" element={<Ajuda />} />
+          <Route path="/IMCForm" element={<IMCForm />} />
         </Routes>
       </div>
     </Router>

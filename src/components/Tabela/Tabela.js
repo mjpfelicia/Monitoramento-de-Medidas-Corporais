@@ -1,4 +1,3 @@
-// TabelaMedidas.js
 import React from 'react';
 
 const TabelaMedidas = ({ linhas, onInputChange, onKeyDown }) => (
@@ -18,13 +17,13 @@ const TabelaMedidas = ({ linhas, onInputChange, onKeyDown }) => (
       <tbody>
         {linhas.map((linha, index) => (
           <tr key={index}>
-            <td><input type="date" name="data" onChange={(event) => onInputChange(index, event)} onKeyDown={(event) => onKeyDown(event, index)} /></td>
-            <td><input type="number" name="peitoral" onChange={(event) => onInputChange(index, event)} onKeyDown={(event) => onKeyDown(event, index)} /></td>
-            <td><input type="number" name="abdomem" onChange={(event) => onInputChange(index, event)} onKeyDown={(event) => onKeyDown(event, index)} /></td>
-            <td><input type="number" name="cintura" onChange={(event) => onInputChange(index, event)} onKeyDown={(event) => onKeyDown(event, index)} /></td>
-            <td><input type="number" name="quadril" onChange={(event) => onInputChange(index, event)} onKeyDown={(event) => onKeyDown(event, index)} /></td>
-            <td><input type="number" name="coxa" onChange={(event) => onInputChange(index, event)} onKeyDown={(event) => onKeyDown(event, index)} /></td>
-            <td><input type="number" name="braco" onChange={(event) => onInputChange(index, event)} onKeyDown={(event) => onKeyDown(event, index)} /></td>
+            <td><input type="date" name="data" value={linha.data || ""} onChange={(event) => onInputChange(index, event)} onKeyDown={(event) => onKeyDown(event, index)} /></td>
+            <td><input type="number" name="peitoral" value={linha.peitoral || ""} onChange={(event) => onInputChange(index, event)} onKeyDown={(event) => onKeyDown(event, index)} /></td>
+            <td><input type="number" name="abdomem" value={linha.abdomem || ""} onChange={(event) => onInputChange(index, event)} onKeyDown={(event) => onKeyDown(event, index)} /></td>
+            <td><input type="number" name="cintura" value={linha.cintura || ""} onChange={(event) => onInputChange(index, event)} onKeyDown={(event) => onKeyDown(event, index)} /></td>
+            <td><input type="number" name="quadril" value={linha.quadril || ""} onChange={(event) => onInputChange(index, event)} onKeyDown={(event) => onKeyDown(event, index)} /></td>
+            <td><input type="number" name="coxa" value={linha.coxa || ""} onChange={(event) => onInputChange(index, event)} onKeyDown={(event) => onKeyDown(event, index)} /></td>
+            <td><input type="number" name="braco" value={linha.braco || ""} onChange={(event) => onInputChange(index, event)} onKeyDown={(event) => onKeyDown(event, index)} /></td>
           </tr>
         ))}
       </tbody>

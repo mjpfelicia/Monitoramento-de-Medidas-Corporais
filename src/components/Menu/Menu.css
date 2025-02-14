@@ -1,4 +1,4 @@
-/* Menu.css */
+/* Menu */
 .menu-nav {
   background-color: var(--menu-background-color);
   padding: 1rem;
@@ -46,15 +46,18 @@
 .menu-nav ul li button .icon {
   margin-right: 0.5rem;
 }
+
 li, button svg {
   fill: var(--menu-link-color);
   margin-right: 0.5rem;
 }
- li a svg {
+
+li a svg {
   fill: var(--menu-link-color);
   margin-right: 0.5rem;
 }
 
+/* Botões de Login e Logout */
 .logout-button,
 .login-button {
   font-size: 1.2rem;
@@ -70,4 +73,44 @@ li, button svg {
 .logout-button:hover,
 .login-button:hover {
   transition: color 0.3s ease-in-out;
+}
+
+/* Menu Responsivo */
+.menu-toggle {
+  display: none;  /* Inicialmente invisível */
+  background-color: var(--menu-background-color);
+  color: var(--menu-link-color);
+  font-size: 1.2rem;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+/* Mostrar o menu em telas pequenas */
+@media (max-width: 600px) {
+  .menu-nav ul {
+    display: none;  /* Oculta o menu em telas pequenas */
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .menu-nav ul.open {
+    display: flex;  /* Exibe o menu quando a classe 'open' for adicionada */
+  }
+
+  .menu-toggle {
+    display: block;  /* Torna o botão visível em telas pequenas */
+  }
+
+  .menu-nav ul li {
+    width: 100%;
+    padding: 1rem 2rem;
+  }
+
+  .menu-nav ul li a,
+  .menu-nav ul li button {
+    width: 100%;
+    text-align: left;
+  }
 }

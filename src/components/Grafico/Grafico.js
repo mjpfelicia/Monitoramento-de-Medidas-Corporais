@@ -6,6 +6,9 @@ import 'chartjs-adapter-date-fns';
 
 Chart.register(...registerables);
 
+// Defina o appElement para garantir que o React Modal saiba qual elemento raiz usar
+Modal.setAppElement('#root'); // Supondo que o seu elemento root tenha o ID 'root'
+
 const Grafico = ({ dados }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
