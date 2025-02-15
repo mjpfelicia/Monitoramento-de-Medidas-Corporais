@@ -6,22 +6,27 @@ import 'chartjs-adapter-date-fns';
 
 Chart.register(...registerables);
 
-Modal.setAppElement('#root'); 
+Modal.setAppElement('#root');
 
 const Grafico = ({ dados }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
-  // Configuração dos dados para os gráficos
+  // Garantir que os dados são válidos
+  if (!Array.isArray(dados) || dados.length === 0) {
+    return <p>Carregando dados para o gráfico...</p>;
+  }
+
+  // Certificando-se de que os dados estão no formato correto para o gráfico
   const data = {
-    labels: dados ? dados.map(dado => dado.data) : [], 
+    labels: dados.map(dado => new Date(dado.data)), // Converter a data para o formato correto
     datasets: [
       {
         label: 'Peitoral (cm)',
-        data: dados ? dados.map(dado => dado.peitoral) : [],
+        data: dados.map(dado => dado.peitoral),
         borderColor: '#8884d8',
         backgroundColor: 'rgba(136, 132, 216, 0.2)',
-        pointRadius: 5, 
-        fill: false, // Remove o preenchimento para gráficos de linha mais limpos
+        pointRadius: 5,
+        fill: false,
         tension: 0.4,
         pointBorderColor: '#8884d8',
         pointBackgroundColor: '#fff',
@@ -30,11 +35,11 @@ const Grafico = ({ dados }) => {
       },
       {
         label: 'Abdômen (cm)',
-        data: dados ? dados.map(dado => dado.abdomem) : [],
+        data: dados.map(dado => dado.abdomem),
         borderColor: '#82ca9d',
         backgroundColor: 'rgba(130, 202, 157, 0.2)',
-        pointRadius: 5, 
-        fill: false, 
+        pointRadius: 5,
+        fill: false,
         tension: 0.4,
         pointBorderColor: '#82ca9d',
         pointBackgroundColor: '#fff',
@@ -43,11 +48,11 @@ const Grafico = ({ dados }) => {
       },
       {
         label: 'Cintura (cm)',
-        data: dados ? dados.map(dado => dado.cintura) : [],
+        data: dados.map(dado => dado.cintura),
         borderColor: '#ffc658',
         backgroundColor: 'rgba(255, 198, 88, 0.2)',
         pointRadius: 5,
-        fill: false, 
+        fill: false,
         tension: 0.4,
         pointBorderColor: '#ffc658',
         pointBackgroundColor: '#fff',
@@ -56,11 +61,11 @@ const Grafico = ({ dados }) => {
       },
       {
         label: 'Quadril (cm)',
-        data: dados ? dados.map(dado => dado.quadril) : [],
+        data: dados.map(dado => dado.quadril),
         borderColor: '#ff7300',
         backgroundColor: 'rgba(255, 115, 0, 0.2)',
         pointRadius: 5,
-        fill: false, 
+        fill: false,
         tension: 0.4,
         pointBorderColor: '#ff7300',
         pointBackgroundColor: '#fff',
@@ -69,11 +74,11 @@ const Grafico = ({ dados }) => {
       },
       {
         label: 'Coxa (cm)',
-        data: dados ? dados.map(dado => dado.coxa) : [],
+        data: dados.map(dado => dado.coxa),
         borderColor: '#387908',
         backgroundColor: 'rgba(56, 121, 8, 0.2)',
         pointRadius: 5,
-        fill: false, 
+        fill: false,
         tension: 0.4,
         pointBorderColor: '#387908',
         pointBackgroundColor: '#fff',
@@ -82,11 +87,11 @@ const Grafico = ({ dados }) => {
       },
       {
         label: 'Braço (cm)',
-        data: dados ? dados.map(dado => dado.braco) : [],
+        data: dados.map(dado => dado.braco),
         borderColor: '#ff0000',
         backgroundColor: 'rgba(255, 0, 0, 0.2)',
         pointRadius: 5,
-        fill: false, 
+        fill: false,
         tension: 0.4,
         pointBorderColor: '#ff0000',
         pointBackgroundColor: '#fff',
@@ -113,13 +118,13 @@ const Grafico = ({ dados }) => {
         },
       },
       y: {
-        beginAtZero: false, // Começa a partir do valor mínimo das medidas
+        beginAtZero: false,
         title: {
           display: true,
           text: 'Medidas (cm)',
         },
         ticks: {
-          stepSize: 5,  // Definindo um intervalo fixo para o eixo Y
+          stepSize: 5,
         },
       },
     },
@@ -127,7 +132,7 @@ const Grafico = ({ dados }) => {
       legend: {
         position: 'top',
         labels: {
-          usePointStyle: true, // Exibe o ponto de estilo no gráfico
+          usePointStyle: true,
         },
       },
       tooltip: {

@@ -15,10 +15,9 @@ const FormularioMedidas = () => {
     braco: ''
   }]);
   const [medidas, setMedidas] = useState([]);
-  const [mostrarGrafico, setMostrarGrafico] = useState(false); // Estado para controlar a exibição do gráfico
+  const [mostrarGrafico, setMostrarGrafico] = useState(false);
   const navigate = useNavigate();
 
-  // Função para adicionar uma nova linha
   const adicionarLinha = () => {
     setLinhas([...linhas, {
       data: '',
@@ -31,7 +30,6 @@ const FormularioMedidas = () => {
     }]);
   };
 
-  // Função para lidar com a mudança de input
   const handleInputChange = (index, event) => {
     const { name, value } = event.target;
     const novasLinhas = [...linhas];
@@ -39,7 +37,6 @@ const FormularioMedidas = () => {
     setLinhas(novasLinhas);
   };
 
-  // Função para navegar pelo formulário com a tecla Enter
   const handleKeyDown = (event, index) => {
     if (event.key === 'Enter') {
       event.preventDefault();
@@ -47,11 +44,12 @@ const FormularioMedidas = () => {
       const nextIndex = Array.prototype.indexOf.call(form, event.target) + 1;
       if (nextIndex < form.length) {
         form.elements[nextIndex].focus();
+      } else {
+        salvarMedidas(); // Se for o último campo, chama a função de salvar
       }
     }
   };
 
-  // Função para salvar as medidas
   const salvarMedidas = () => {
     const medidasValidas = linhas.filter(linha => 
       linha.data && linha.peitoral && linha.abdomem && linha.cintura && linha.quadril && linha.coxa && linha.braco
@@ -69,26 +67,24 @@ const FormularioMedidas = () => {
         coxa: '',
         braco: ''
       }]);
-      setMostrarGrafico(true); // Exibe o gráfico após salvar as medidas
+      setMostrarGrafico(true);
     } else {
       alert('Preencha todas as medidas antes de salvar.');
     }
   };
 
-  // Função para voltar para a página inicial
   const voltarPagina = () => {
     navigate('/');
   };
 
   return (
     <div className="container-medidas">
-      {/* Exibe o formulário apenas se o gráfico não for mostrado */}
       {!mostrarGrafico && (
         <form id="formulario-medidas">
           <TabelaMedidas 
             linhas={linhas} 
             onInputChange={handleInputChange} 
-            onKeyDown={handleKeyDown} // Passando a função onKeyDown aqui
+            onKeyDown={handleKeyDown} 
           />
           <div className="buttons-container">
             <button 
@@ -109,7 +105,6 @@ const FormularioMedidas = () => {
         </form>
       )}
 
-      {/* Exibe o gráfico apenas se 'mostrarGrafico' for true */}
       {mostrarGrafico && (
         <div>
           <Grafico dados={medidas} />

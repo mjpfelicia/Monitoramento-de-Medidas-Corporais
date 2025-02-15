@@ -7,7 +7,7 @@ import './Menu.css';
 
 const Menu = ({ isAuthenticated, userName, handleLogout }) => {
   const [showModal, setShowModal] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);  // Para controle do menu responsivo
+  const [isMenuOpen, setIsMenuOpen] = useState(false);  // Controle do menu responsivo
 
   const handleLoginClick = () => {
     setShowModal(true);
@@ -23,7 +23,14 @@ const Menu = ({ isAuthenticated, userName, handleLogout }) => {
 
   return (
     <nav className="menu-nav">
-      <button className="menu-toggle" onClick={toggleMenu}>☰</button>  {/* Botão de Menu Responsivo */}
+      <button 
+        className="menu-toggle" 
+        onClick={toggleMenu} 
+        aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}  // Melhoria de acessibilidade
+      >
+        ☰
+      </button>  
+      
       <ul className={isMenuOpen ? 'open' : ''}>
         <li>
           <NavLink to="/grafico" className={({ isActive }) => isActive ? 'active' : ''}>
@@ -40,6 +47,7 @@ const Menu = ({ isAuthenticated, userName, handleLogout }) => {
             <FaWpforms /> Formulário
           </NavLink>
         </li>
+        
         {!isAuthenticated && (
           <li>
             <button onClick={handleLoginClick} className="login-button">
@@ -47,6 +55,7 @@ const Menu = ({ isAuthenticated, userName, handleLogout }) => {
             </button>
           </li>
         )}
+
         {isAuthenticated && (
           <>
             <li>
@@ -60,6 +69,7 @@ const Menu = ({ isAuthenticated, userName, handleLogout }) => {
           </>
         )}
       </ul>
+      
       <Modal show={showModal} onClose={handleCloseModal}>
         <Login />
       </Modal>
