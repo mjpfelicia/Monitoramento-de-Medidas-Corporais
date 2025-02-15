@@ -6,62 +6,92 @@ import 'chartjs-adapter-date-fns';
 
 Chart.register(...registerables);
 
-// Defina o appElement para garantir que o React Modal saiba qual elemento raiz usar
-Modal.setAppElement('#root'); // Supondo que o seu elemento root tenha o ID 'root'
+Modal.setAppElement('#root'); 
 
 const Grafico = ({ dados }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
+  // Configuração dos dados para os gráficos
   const data = {
-    labels: dados ? dados.map(dado => dado.data) : [],
+    labels: dados ? dados.map(dado => dado.data) : [], 
     datasets: [
       {
         label: 'Peitoral (cm)',
         data: dados ? dados.map(dado => dado.peitoral) : [],
         borderColor: '#8884d8',
         backgroundColor: 'rgba(136, 132, 216, 0.2)',
-        fill: true,
+        pointRadius: 5, 
+        fill: false, // Remove o preenchimento para gráficos de linha mais limpos
         tension: 0.4,
+        pointBorderColor: '#8884d8',
+        pointBackgroundColor: '#fff',
+        pointHoverBackgroundColor: '#8884d8',
+        pointHoverBorderColor: '#8884d8',
       },
       {
         label: 'Abdômen (cm)',
         data: dados ? dados.map(dado => dado.abdomem) : [],
         borderColor: '#82ca9d',
         backgroundColor: 'rgba(130, 202, 157, 0.2)',
-        fill: true,
+        pointRadius: 5, 
+        fill: false, 
         tension: 0.4,
+        pointBorderColor: '#82ca9d',
+        pointBackgroundColor: '#fff',
+        pointHoverBackgroundColor: '#82ca9d',
+        pointHoverBorderColor: '#82ca9d',
       },
       {
         label: 'Cintura (cm)',
         data: dados ? dados.map(dado => dado.cintura) : [],
         borderColor: '#ffc658',
         backgroundColor: 'rgba(255, 198, 88, 0.2)',
-        fill: true,
+        pointRadius: 5,
+        fill: false, 
         tension: 0.4,
+        pointBorderColor: '#ffc658',
+        pointBackgroundColor: '#fff',
+        pointHoverBackgroundColor: '#ffc658',
+        pointHoverBorderColor: '#ffc658',
       },
       {
         label: 'Quadril (cm)',
         data: dados ? dados.map(dado => dado.quadril) : [],
         borderColor: '#ff7300',
         backgroundColor: 'rgba(255, 115, 0, 0.2)',
-        fill: true,
+        pointRadius: 5,
+        fill: false, 
         tension: 0.4,
+        pointBorderColor: '#ff7300',
+        pointBackgroundColor: '#fff',
+        pointHoverBackgroundColor: '#ff7300',
+        pointHoverBorderColor: '#ff7300',
       },
       {
         label: 'Coxa (cm)',
         data: dados ? dados.map(dado => dado.coxa) : [],
         borderColor: '#387908',
         backgroundColor: 'rgba(56, 121, 8, 0.2)',
-        fill: true,
+        pointRadius: 5,
+        fill: false, 
         tension: 0.4,
+        pointBorderColor: '#387908',
+        pointBackgroundColor: '#fff',
+        pointHoverBackgroundColor: '#387908',
+        pointHoverBorderColor: '#387908',
       },
       {
         label: 'Braço (cm)',
         data: dados ? dados.map(dado => dado.braco) : [],
         borderColor: '#ff0000',
         backgroundColor: 'rgba(255, 0, 0, 0.2)',
-        fill: true,
+        pointRadius: 5,
+        fill: false, 
         tension: 0.4,
+        pointBorderColor: '#ff0000',
+        pointBackgroundColor: '#fff',
+        pointHoverBackgroundColor: '#ff0000',
+        pointHoverBorderColor: '#ff0000',
       },
     ],
   };
@@ -78,22 +108,36 @@ const Grafico = ({ dados }) => {
           display: true,
           text: 'Data',
         },
+        ticks: {
+          source: 'auto',
+        },
       },
       y: {
-        beginAtZero: true,
+        beginAtZero: false, // Começa a partir do valor mínimo das medidas
         title: {
           display: true,
           text: 'Medidas (cm)',
+        },
+        ticks: {
+          stepSize: 5,  // Definindo um intervalo fixo para o eixo Y
         },
       },
     },
     plugins: {
       legend: {
         position: 'top',
+        labels: {
+          usePointStyle: true, // Exibe o ponto de estilo no gráfico
+        },
       },
       tooltip: {
         mode: 'index',
         intersect: false,
+        callbacks: {
+          label: function (tooltipItem) {
+            return `${tooltipItem.dataset.label}: ${tooltipItem.raw} cm`;
+          },
+        },
       },
     },
   };

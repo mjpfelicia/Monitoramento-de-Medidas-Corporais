@@ -27,6 +27,29 @@
   --input-focus-border-color: #007bff;
   --input-background-color: #f9f9f9;
   --error-message-color: red;
+
+  /* Novas variáveis sugeridas para flexibilidade */
+  
+  /* Tipografia */
+  --font-size-base: 16px;
+  --font-size-large: 18px;
+  --font-size-small: 14px;
+  
+  /* Espaçamentos */
+  --spacing-small: 0.5rem;
+  --spacing-medium: 1rem;
+  --spacing-large: 2rem;
+  
+  /* Cores adicionais para o design */
+  --success-color: #28a745;
+  --warning-color: #ffc107;
+  --info-color: #17a2b8;
+  --danger-color: #dc3545;
+
+  /* Tamanhos de borda */
+  --border-radius-small: 4px;
+  --border-radius-medium: 8px;
+  --border-radius-large: 12px;
 }
 
 * {
@@ -35,7 +58,8 @@
   box-sizing: border-box;
 }
 
-body {
+body,
+html {
   font-family: var(--font-family);
   background-color: var(--background-color);
   margin: 0;
@@ -44,6 +68,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh; /* Para garantir que ocupe 100% da altura da tela */
   text-align: center;
 }
 
@@ -56,6 +81,7 @@ body {
   box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
   border-radius: 0.625rem;
 }
+
 button {
   background-color: var(--button-bg-color);
   color: var(--button-text-color);

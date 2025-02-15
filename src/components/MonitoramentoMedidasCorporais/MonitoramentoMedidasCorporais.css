@@ -1,21 +1,40 @@
+.monitoramento-medidas-container {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--form-background-color);
+    border-radius: var(--border-radius-medium);
+}
+
+.monitoramento-medidas-container h2 {
+    margin-bottom: var(--spacing-small);
+    color: var(--heading-color);
+}
+
+.monitoramento-medidas-container p {
+    font-size: var(--font-size-base);
+    color: var(--text-color);
+}
+
 input[type="text"],
 input[type="number"] {
     width: 100%;
     padding: var(--input-padding);
     box-sizing: border-box;
+    border: 1px solid var(--input-border-color);
+    background-color: var(--input-background-color);
+    border-radius: var(--border-radius-small);
 }
 
 .icon-fit-person {
     position: relative;
     display: flex;
     justify-content: center;
-    margin: 1.25rem 0;
+    margin: var(--spacing-medium) 0;
     flex-wrap: wrap;
 }
 
 .icon-img {
-    width: 12rem;
-    height: 24rem;
+    max-width: 100%;
+    height: auto;
 }
 
 @media (max-width: 600px) {
@@ -28,8 +47,9 @@ input[type="number"] {
         display: block;
     }
 
-    th, td {
-        padding: var(--input-padding);
+    th,
+    td {
+        padding: var(--table-padding);
         text-align: right;
         position: relative;
         border: none;
@@ -40,9 +60,9 @@ input[type="number"] {
     td::before {
         content: attr(data-label);
         position: absolute;
-        left: 0.625rem;
-        width: calc(50% - 1.25rem);
-        padding-right: 0.625rem;
+        left: var(--spacing-small);
+        width: calc(50% - var(--spacing-medium));
+        padding-right: var(--spacing-small);
         text-align: left;
         font-weight: bold;
     }
@@ -53,7 +73,8 @@ input[type="number"] {
 
     td {
         border: none;
-        padding-left: 50%;
+        padding-left: 0;
+        text-align: left; /* Alinhamento à esquerda */
     }
 
     td:last-child {

@@ -1,79 +1,34 @@
 .imc-form-container {
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    max-width: 400px;
-    width: 100%;
-  }
-  
-  .imc-form-title {
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .imc-form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .imc-form-group {
-    margin-bottom: 15px;
-  }
-  
-  .imc-form-label {
-    font-size: 16px;
-    color: #555;
-  }
-  
-  .imc-form-input {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 2px solid #ddd;
-    border-radius: 4px;
-    margin-top: 5px;
-  }
-  
-  .imc-form-input:focus {
-    border-color: #3498db;
-    outline: none;
-  }
-  
-  .imc-form-submit-btn {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 12px;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 10px;
-  }
-  
-  .imc-form-submit-btn:hover {
-    background-color: #2980b9;
-  }
-  
-  .imc-form-submit-btn:active {
-    background-color: #1c5983;
-  }
-  
-  .imc-form-results {
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  .imc-form-results h3 {
-    font-size: 22px;
-    margin-bottom: 5px;
-  }
-  
-  .imc-form-results p {
-    font-size: 18px;
-    color: #555;
-  }
-  
+  background-color: var(--form-background-color);
+  border-radius: var(--border-radius-medium);
+  padding: var(--spacing-medium);
+  max-width: var(--max-width);
+  width: 100%;
+  border: 1px solid var(--form-border-color);
+  box-shadow: 0 4px 8px var(--form-box-shadow);
+}
+
+.imc-form-title {
+  font-size: var(--font-size-large);
+  margin-bottom: var(--spacing-medium);
+  color: var(--heading-color);
+}
+
+.imc-form-input {
+  padding: var(--input-padding);
+  font-size: var(--font-size-base);
+  border: 2px solid var(--input-border-color);
+  border-radius: var(--border-radius-small);
+  margin-top: var(--spacing-small);
+  background-color: var(--input-background-color);
+}
+
+.imc-form-submit-btn {
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  border-radius: var(--border-radius-small);
+  padding: var(--spacing-small);
+  font-size: var(--font-size-base);
+  transition: background-color 0.3s ease;
+  margin-top: var(--spacing-medium);
+}

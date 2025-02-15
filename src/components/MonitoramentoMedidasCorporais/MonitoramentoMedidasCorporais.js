@@ -6,12 +6,12 @@ import Menu from '../Menu/Menu.js';
 import './MonitoramentoMedidasCorporais.css';
 
 const MonitoramentoMedidasCorporais = () => (
-  <>
+  <div className="monitoramento-medidas-container">
     <Menu />
     <Cabecalho />
     <IconeFitness />
     <Dicas />
-  </>
+  </div>
 );
 
 export default MonitoramentoMedidasCorporais;

@@ -19,7 +19,9 @@
 .dicas-section li {
   margin-bottom: 0.5rem;
 }
-.li__dicas {
-  color:var(--heading-color)!important;
+
+.li__dicas,
+.li__calcular {
+  color: var(--heading-color) !important;
   font-size: 1.5rem;
 }
