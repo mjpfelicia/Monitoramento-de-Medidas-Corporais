@@ -1,0 +1,136 @@
+/* CalculoMacronutrientes.css */
+
+/* Contêiner principal do componente CalculoMacronutrientes */
+.calculoMacronutrientes-container {
+  max-width: var(--max-width);
+  margin: var(--spacing-medium) auto;
+  padding: var(--spacing-medium);
+  background-color: var(--form-background-color);
+  border-radius: var(--border-radius-medium);
+  box-shadow: 0 4px 8px var(--form-box-shadow);
+}
+
+/* Título principal do componente */
+.calculoMacronutrientes-title {
+  text-align: center;
+  font-size: var(--font-size-large);
+  color: var(--heading-color);
+  margin-bottom: var(--spacing-medium);
+}
+
+/* Formulário do componente */
+.calculoMacronutrientes-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-small);
+}
+
+/* Rótulos dos campos de entrada */
+.calculoMacronutrientes-label {
+  font-size: var(--font-size-base);
+  color: var(--text-color);
+}
+
+/* Estilo dos campos de entrada */
+.calculoMacronutrientes-input {
+  padding: var(--input-padding);
+  font-size: var(--font-size-base);
+  border: 1px solid var(--input-border-color);
+  border-radius: var(--border-radius-small);
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+/* Estilo para o campo de entrada em foco */
+.calculoMacronutrientes-input:focus {
+  border-color: var(--input-focus-border-color);
+}
+
+/* Botão para calcular */
+.calculoMacronutrientes-button {
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  border: none;
+  padding: 12px 20px;
+  border-radius: var(--border-radius-small);
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s;
+  margin-top: var(--spacing-medium);
+}
+
+/* Efeito hover no botão */
+.calculoMacronutrientes-button:hover {
+  background-color: var(--button-hover-bg-color);
+}
+
+/* Estilo para exibição do resultado */
+.calculoMacronutrientes-result {
+  text-align: center;
+  font-size: var(--font-size-large);
+  color: var(--text-color);
+  margin-top: var(--spacing-medium);
+  font-weight: bold;
+}
+
+/* Estilo para a mensagem de erro */
+.calculoMacronutrientes-error-message {
+  color: var(--error-message-color);
+  font-size: var(--font-size-base);
+  text-align: center;
+  margin-top: var(--spacing-small);
+}
+
+/* Estilo para exibir as calorias e macronutrientes recomendados */
+.calculoMacronutrientes-summary {
+  background-color: #f2f2f2;
+  padding: var(--spacing-medium);
+  border-radius: var(--border-radius-medium);
+  margin-top: var(--spacing-large);
+  font-size: var(--font-size-base);
+}
+
+/* Estilo para os itens dentro do resumo (calorias e macronutrientes) */
+.calculoMacronutrientes-summary-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-small);
+}
+
+.calculoMacronutrientes-summary-item strong {
+  font-weight: bold;
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+  .calculoMacronutrientes-container {
+      padding: var(--spacing-small);
+      width: 100%;
+  }
+
+  .calculoMacronutrientes-title {
+      font-size: 1.6rem;
+  }
+
+  .calculoMacronutrientes-form {
+      gap: var(--spacing-small);
+  }
+
+  .calculoMacronutrientes-input {
+      font-size: 0.9rem;
+  }
+
+  .calculoMacronutrientes-button {
+      font-size: 0.9rem;
+      padding: var(--spacing-small) var(--spacing-medium);
+  }
+
+  .calculoMacronutrientes-summary {
+      padding: var(--spacing-small);
+  }
+
+  .calculoMacronutrientes-summary-item {
+      font-size: 0.9rem;
+  }
+}

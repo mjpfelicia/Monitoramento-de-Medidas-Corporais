@@ -12,6 +12,10 @@ import Ajuda from './components/Ajuda/Ajuda';
 import IMCForm from './components/IMCForm/IMCForm';
 import Dicas from './components/Dicas/Dicas';
 import Dica from './components/Dica/Dica';
+import ComposicaoCorporal from './components/ComposicaoCorporal/ComposicaoCorporal';
+import CalculoMacronutrientes from './components/CalculoMacronutrientes/CalculoMacronutrientes';
+
+
 
 
 import './App.css';
@@ -32,6 +36,8 @@ function App() {
           <Route path="/IMCForm" element={<IMCForm />} />
           <Route path="/dicas" element={<Dicas />} />
           <Route path="/dica" element={<Dica />} />
+          <Route path="/composicaoCorporal" element={<ComposicaoCorporal />} />
+          <Route path="/CalculoMacronutrientes" element={<CalculoMacronutrientes />} />
         </Routes>
       </div>
     </Router>

@@ -1,0 +1,76 @@
+/* ComposicaoCorporal.css */
+
+/* Contêiner principal do componente ComposicaoCorporal */
+.composicaoCorporal-container {
+    max-width: var(--max-width);
+    margin: var(--spacing-medium) auto;
+    padding: var(--spacing-medium);
+    background-color: var(--form-background-color);
+    border-radius: var(--border-radius-medium);
+    box-shadow: 0 4px 8px var(--form-box-shadow);
+  }
+  
+  /* Título principal do componente */
+  .composicaoCorporal-title {
+    text-align: center;
+    font-size: var(--font-size-large);
+    color: var(--heading-color);
+    margin-bottom: var(--spacing-medium);
+  }
+  
+  /* Formulário do componente */
+  .composicaoCorporal-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-small);
+  }
+  
+  /* Rótulos dos campos de entrada */
+  .composicaoCorporal-label {
+    font-size: var(--font-size-base);
+    color: var(--text-color);
+  }
+  
+  /* Estilo dos campos de entrada */
+  .composicaoCorporal-input {
+    padding: var(--input-padding);
+    font-size: var(--font-size-base);
+    border: 1px solid var(--input-border-color);
+    border-radius: var(--border-radius-small);
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  /* Estilo para o campo de entrada em foco */
+  .composicaoCorporal-input:focus {
+    border-color: var(--input-focus-border-color);
+  }
+  
+  /* Botão para calcular */
+  .composicaoCorporal-button {
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    border: none;
+    padding: 12px 20px;
+    border-radius: var(--border-radius-small);
+    font-size: var(--font-size-base);
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+    margin-top: var(--spacing-medium);
+  }
+  
+  /* Efeito hover no botão */
+  .composicaoCorporal-button:hover {
+    background-color: var(--button-hover-bg-color);
+  }
+  
+  /* Estilo para exibição do resultado */
+  .composicaoCorporal-result {
+    text-align: center;
+    font-size: var(--font-size-large);
+    color: var(--text-color);
+    margin-top: var(--spacing-medium);
+    font-weight: bold;
+  }
+  

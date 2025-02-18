@@ -1,50 +1,48 @@
 /* Contêiner principal da página de ajuda */
 .container-ajuda {
-  padding: 40px;
+  padding: var(--spacing-large);
   max-width: 900px;
   margin: 0 auto;
-  background-color: #fff;
-  border-radius: 12px;
+  background-color: var(--form-background-color);
+  border-radius: var(--border-radius-large);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--font-family);
   text-align: justify;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
-  min-height: 100vh; /* Garante a altura mínima da tela */
-  padding-bottom: 30px; /* Espaçamento inferior */
+  min-height: 100vh;
+  padding-bottom: var(--spacing-medium); /* Espaçamento inferior */
 }
 
 /* Título principal da página de ajuda */
 .container-ajuda h1 {
   font-size: 2.2em;
-  margin-bottom: 30px; /* Maior espaço abaixo do título */
-  color: #4A4A4A;
+  margin-bottom: var(--spacing-large); /* Maior espaço abaixo do título */
+  color: var(--text-color);
   text-align: center;
   font-weight: 600;
   word-wrap: break-word;
-  width: 100%; /* Garante que o título ocupe toda a largura */
-  padding: 10px 0; /* Espaçamento interno para separar do conteúdo */
-  margin-top: 0; /* Garante que o título tenha espaço no topo */
+  width: 100%;
+  padding: 10px 0;
+  margin-top: 0;
 }
 
 /* Estilo das seções */
 .container-ajuda section {
-  border-bottom: 1px solid #e0e0e0;
- 
+  border-bottom: 1px solid var(--table-border-color);
 }
 
 /* Títulos das seções */
 .container-ajuda h2 {
-  font-size: 1.9em;
-  margin-bottom: 20px;
-  color: #333;
+  font-size: 1.5em;
+  margin-bottom: var(--spacing-medium);
+  color: var(--heading-color);
   font-weight: 500;
   border-bottom: 2px solid #E5E5E5;
-  padding-bottom: 5px;
   text-align: center;
+  padding: 1rem;
 }
 
 /* Listas numeradas e com marcadores */
@@ -52,22 +50,21 @@
   margin-left: 30px;
   padding-left: 30px;
   list-style-position: inside;
-  font-size: 1.2em;
-  color: #555;
+  font-size: var(--font-size-base);
+  color: var(--text-color);
   line-height: 1.8;
 }
 
 /* Estilo para parágrafos e itens de lista */
 .container-ajuda p, .container-ajuda li {
-  font-size: 1em;
+  font-size: var(--font-size-base);
   line-height: 1.8;
-  color: #666;
-
+  color: var(--text-color);
 }
 
 /* Links dentro da ajuda */
 .container-ajuda a {
-  color: #007BFF;
+  color: var(--menu-hover-color);
   text-decoration: none;
   font-weight: 500;
 }
@@ -77,16 +74,44 @@
   text-decoration: underline;
 }
 
+/* Estilo para itens de FAQ */
+.faq-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.faq-item::before {
+  content: "•"; /* Adiciona o ponto */
+  color: var(--menu-hover-color); /* Cor do ponto */
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+.faq-item strong {
+  font-weight: bold;
+}
+
+.faq-item i {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+  margin-left: 10px;
+}
+
+.faq-item i:hover {
+  transform: scale(1.2);
+}
+
 /* Ajustes para dispositivos móveis */
 @media (max-width: 768px) {
   .container-ajuda {
-    padding: 20px;
+    padding: var(--spacing-medium);
     max-width: 100%;
   }
 
   .container-ajuda h1 {
     font-size: 2.5em;
-    margin-top: 10px; /* Espaço superior adequado */
+    margin-top: 10px;
   }
 
   .container-ajuda h2 {
@@ -99,6 +124,6 @@
   }
 
   .container-ajuda p, .container-ajuda li {
-    font-size: 1.1em;
+    font-size: var(--font-size-small);
   }
 }
