@@ -80,7 +80,7 @@ const Ajuda = () => {
           <li><Link to="/IMCForm">Calculadora de IMC</Link></li>
           <li><Link to="/dica">Dicas para Medir</Link></li>
           <li><Link to="/ComposicaoCorporal">Análise de Composição Corporal</Link></li>
-          <li><Link to="/CalculoMacronutrientes">Tutoriais e Ajuda</Link></li>
+          <li><Link to="/CalculoMacronutrientes">Calcular Macronutrientes e Calorias</Link></li>
         </ul>
       </section>
     </div>

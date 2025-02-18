@@ -4,7 +4,7 @@ Este projeto é uma aplicação React que permite aos usuários registrar e visu
 
 ## Imagem do Site
 
-![Imagem do Site](/public/telaat.png)
+![Imagem do Site](/public/tela2.png)
 
 ## Tecnologias Utilizadas
 
@@ -15,11 +15,16 @@ Este projeto é uma aplicação React que permite aos usuários registrar e visu
 
 ## Estrutura do Projeto
 
-O projeto é composto pelos seguintes componentes principais:
-
-- **FormularioMedidas**: Componente principal que contém o formulário para inserção de medidas, o gráfico e o modal para definir objetivos pessoais.
-- **Grafico**: Componente que exibe um gráfico de linhas das medidas inseridas.
-- **ObjetivosPessoais**: Componente que permite aos usuários definir seus objetivos pessoais e exibi-los.
+ **FormularioMedidas**: Componente responsável pela inserção das medidas corporais do usuário, incluindo peso, altura e outras informações. Este componente também tem a lógica de envio de dados.
+- **Grafico**: Exibe um gráfico de linha mostrando a evolução das medidas ao longo do tempo, utilizando a biblioteca **recharts**.
+- 
+- **ObjetivosPessoais**: Permite que o usuário defina e visualize seus objetivos, como emagrecimento ou ganho de massa muscular.
+- 
+- **ComposicaoCorporal**: Componente que realiza a análise da composição corporal do usuário, fornecendo informações sobre gordura corporal, massa magra, e outras métricas importantes para acompanhamento da saúde.
+- 
+- **CalculoMacronutrientes**: Componente que calcula os macronutrientes necessários para a dieta do usuário, com base em dados como peso, altura, idade e nível de atividade física.
+- 
+- **Ajuda**: Componente que oferece tutoriais e FAQ, ajudando o usuário a navegar pela aplicação e entender como usar as funcionalidades.
 
 ## Instalação
 
