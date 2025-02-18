@@ -17,6 +17,15 @@
   top: 4.5rem;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 999;
+}
+
+.etiqueta-peitoral p {
+  display: none;
+}
+
+.etiqueta-peitoral:hover p {
+  display: block;
 }
 
 .etiqueta-abdomen {
@@ -44,7 +53,7 @@
 }
 
 .etiqueta-braco {
-  top: 2.5rem;
+  top: 7rem;
   left: 54%;
 
 }

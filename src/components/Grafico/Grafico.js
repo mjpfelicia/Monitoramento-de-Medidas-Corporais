@@ -13,7 +13,13 @@ const Grafico = ({ dados }) => {
 
   // Garantir que os dados são válidos
   if (!Array.isArray(dados) || dados.length === 0) {
-    return <p>Carregando dados para o gráfico...</p>;
+    const medidasSalvas = localStorage.getItem('medidas');
+
+    if (medidasSalvas) {
+      dados = JSON.parse(medidasSalvas);
+    } else {
+      return <p>Carregando dados para o gráfico...</p>;
+    }
   }
 
   // Certificando-se de que os dados estão no formato correto para o gráfico
@@ -24,7 +30,7 @@ const Grafico = ({ dados }) => {
         label: 'Peitoral (cm)',
         data: dados.map(dado => dado.peitoral),
         borderColor: '#8884d8',
-        backgroundColor: 'rgba(136, 132, 216, 0.2)',
+        backgroundColor: '#8884d8',
         pointRadius: 5,
         fill: false,
         tension: 0.4,

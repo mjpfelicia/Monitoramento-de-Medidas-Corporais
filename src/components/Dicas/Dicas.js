@@ -1,5 +1,7 @@
-import './Dicas.css';
+// Dicas.js
+import React from 'react';
 import { Link } from 'react-router-dom';
+import './Dicas.css';
 
 const Dicas = () => (
   <section className="dicas-section">

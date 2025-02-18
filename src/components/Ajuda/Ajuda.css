@@ -1,46 +1,104 @@
-/* Ajuda.css */
+/* Contêiner principal da página de ajuda */
 .container-ajuda {
-  padding: 20px;
-  max-width: 800px;
+  padding: 40px;
+  max-width: 900px;
   margin: 0 auto;
   background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif;
+  text-align: justify;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  min-height: 100vh; /* Garante a altura mínima da tela */
+  padding-bottom: 30px; /* Espaçamento inferior */
 }
 
+/* Título principal da página de ajuda */
 .container-ajuda h1 {
-  font-size: 2.5em;
+  font-size: 2.2em;
+  margin-bottom: 30px; /* Maior espaço abaixo do título */
+  color: #4A4A4A;
+  text-align: center;
+  font-weight: 600;
+  word-wrap: break-word;
+  width: 100%; /* Garante que o título ocupe toda a largura */
+  padding: 10px 0; /* Espaçamento interno para separar do conteúdo */
+  margin-top: 0; /* Garante que o título tenha espaço no topo */
+}
+
+/* Estilo das seções */
+.container-ajuda section {
+  border-bottom: 1px solid #e0e0e0;
+ 
+}
+
+/* Títulos das seções */
+.container-ajuda h2 {
+  font-size: 1.9em;
   margin-bottom: 20px;
   color: #333;
+  font-weight: 500;
+  border-bottom: 2px solid #E5E5E5;
+  padding-bottom: 5px;
   text-align: center;
 }
 
-.container-ajuda section {
-  margin-bottom: 30px;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 20px;
-}
-
-.container-ajuda h2 {
-  font-size: 1.8em;
-  margin-bottom: 10px;
-  color: #555;
-}
-
+/* Listas numeradas e com marcadores */
 .container-ajuda ol, .container-ajuda ul {
-  margin-left: 20px;
-  padding-left: 20px;
+  margin-left: 30px;
+  padding-left: 30px;
   list-style-position: inside;
-  font-size: 1em;
-  color: #666;
-}
-
-.container-ajuda p, .container-ajuda li {
   font-size: 1.2em;
-  line-height: 1.6;
-  color: #666;
+  color: #555;
+  line-height: 1.8;
 }
 
-.container-ajuda li strong {
-  color: #333;
+/* Estilo para parágrafos e itens de lista */
+.container-ajuda p, .container-ajuda li {
+  font-size: 1em;
+  line-height: 1.8;
+  color: #666;
+
+}
+
+/* Links dentro da ajuda */
+.container-ajuda a {
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Efeito de hover nos links */
+.container-ajuda a:hover {
+  text-decoration: underline;
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+  .container-ajuda {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .container-ajuda h1 {
+    font-size: 2.5em;
+    margin-top: 10px; /* Espaço superior adequado */
+  }
+
+  .container-ajuda h2 {
+    font-size: 1.8em;
+  }
+
+  .container-ajuda ol, .container-ajuda ul {
+    margin-left: 15px;
+    padding-left: 15px;
+  }
+
+  .container-ajuda p, .container-ajuda li {
+    font-size: 1.1em;
+  }
 }

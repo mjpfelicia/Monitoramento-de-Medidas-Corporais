@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ObjetivosPessoais.css';
+import { obterDados, salvarDados } from '../../services/localStoreService';
 
 const ObjetivosPessoais = () => {
+
+  const objetivosSalvos = obterDados('objetivos');
+
   const [objetivos, setObjetivos] = useState({
-    peso: '',
-    peitoral: '',
-    abdomen: '',
-    cintura: '',
-    quadril: '',
-    coxa: '',
-    braco: ''
+    peso: objetivosSalvos?.peso || '',
+    peitoral: objetivosSalvos?.peitoral || '',
+    abdomen: objetivosSalvos?.abdomen || '',
+    cintura: objetivosSalvos?.cintura || '',
+    quadril: objetivosSalvos?.quadril || '',
+    coxa: objetivosSalvos?.coxa || '',
+    braco: objetivosSalvos?.braco || '',
   });
 
   const navigate = useNavigate();
@@ -23,6 +27,8 @@ const ObjetivosPessoais = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Objetivos definidos:', objetivos);
+
+    salvarDados('objetivos', objetivos);
   };
 
   return (

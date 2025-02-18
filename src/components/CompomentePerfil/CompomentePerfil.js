@@ -1,19 +1,23 @@
 import React, { useState } from 'react';
 import './CompomentePerfil.css';
+import { obterDados, salvarDados } from '../../services/localStoreService';
 
 
 
 
 const Perfil = () => {
+
+  const medidas = obterDados('medidas');
+  const ultimaMedidas = medidas ? medidas[medidas.length -1] : {};
   const [usuario, setUsuario] = useState({
     nome: '',
     email: '',
-    metaPeitoral: '',
-    metaAbdomem: '',
-    metaCintura: '',
-    metaQuadril: '',
-    metaCoxa: '',
-    metaBraco: '',
+    metaPeitoral: ultimaMedidas?.peitoral || '',
+    metaAbdomem: ultimaMedidas?.abdomem || '',
+    metaCintura: ultimaMedidas?.cintura || '',
+    metaQuadril: ultimaMedidas?.quadril || '',
+    metaCoxa: ultimaMedidas?.coxa || '',
+    metaBraco: ultimaMedidas?.braco || '',
   });
 
   const handleInputChange = (event) => {
@@ -24,7 +28,7 @@ const Perfil = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     // Lógica para salvar os dados do usuário
-    localStorage.setItem('usuario', JSON.stringify(usuario));
+    salvarDados('usuario', usuario);
     alert('Perfil salvo com sucesso!');
   };
 

@@ -10,6 +10,7 @@
         "Compomente",
         "conteudo",
         "Conteudo",
+        "darr",
         "describedby",
         "diferencas",
         "Evolucao",
@@ -19,10 +20,12 @@
         "Formulario",
         "grafico",
         "Grafico",
+        "historico",
         "icone",
         "Icone",
         "jspdf",
         "registerables",
+        "relogio",
         "Toastify",
         "Wpforms"
     ]

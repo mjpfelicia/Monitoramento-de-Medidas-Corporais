@@ -1,6 +1,6 @@
-// Ajuda.js
 import React from 'react';
 import './Ajuda.css';
+import { Link } from 'react-router-dom';
 
 const Ajuda = () => {
   return (
@@ -30,6 +30,15 @@ const Ajuda = () => {
         <ul>
           <li><strong>Como posso editar minhas medidas?</strong> No momento, a edição de medidas ainda não está disponível, mas estamos trabalhando nisso!</li>
           <li><strong>Como posso excluir uma medida?</strong> Para excluir uma medida, você pode...</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Links úteis</h2>
+        <ul>
+          <li><Link to="/formulario">Adicionar Medidas</Link></li>
+          <li><Link to="/grafico">Ver Gráfico de Medidas</Link></li>
+          <li><Link to="/IMCForm">Calculadora de IMC</Link></li>
+          <li><Link to="/dica">Dicas para Medir</Link></li>
         </ul>
       </section>
     </div>

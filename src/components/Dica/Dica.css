@@ -1,0 +1,93 @@
+/* Dica.css */
+.container-dicas {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .container-dicas h1 {
+    font-size: 2.5rem;
+    color: var(--heading-color);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .dica-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .dica-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: #f9f9f9;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+  }
+  
+  .dica-item:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .dica-item i {
+    font-size: 24px;
+    color: var(--menu-hover-color);
+   
+  }
+  
+  .toggle-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: var(--button-bg-color);
+    border-radius: var(--border-radius-small);
+    color: var(--button-text-color);
+    font-size: var(--font-size-large);
+    transition: background-color 0.3s ease;
+  }
+  
+  .toggle-btn:hover {
+    background-color: var(--button-hover-bg-color);
+  }
+  
+  .arrow {
+    transition: transform 0.3s ease;
+    margin-right: 10px;
+  }
+  
+  .arrow.rotate {
+    transform: rotate(180deg);
+  }
+  
+  .dica-list li {
+    max-height: 100px;
+    opacity: 1;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+  
+  .dica-list li.hidden {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+  }
+  
+  .dica-list li.visible {
+    max-height: 100px;
+    opacity: 1;
+  }
+  
+  .dica-list li img {
+    margin-right: 10px;
+  }
+  
