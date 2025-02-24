@@ -28,10 +28,11 @@
     margin-bottom: 10px;
 }
 
-#formulario-objetivos h2 {
+#formulario-objetivos h2, h3 {
     color: var(--heading-color);
     margin-bottom: 2rem;
 }
+
 
 #formulario-objetivos button {
     margin-top: 10px;

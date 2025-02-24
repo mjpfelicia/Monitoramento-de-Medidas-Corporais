@@ -198,7 +198,7 @@ const ObjetivosPessoais = () => {
       </div>
 
       <div className="macronutrientes-exibidos">
-        <h3>Macronutrientes para atingir seu objetivo</h3>
+        <h3>Entenda os Nutrientes Essenciais para Chegar ao Seu Objet</h3>
         <ul>
           <li>Calorias para o Objetivo: {macronutrientes.caloriasObjetivo} kcal</li>
           <li>Proteínas: {macronutrientes.proteinas} g</li>

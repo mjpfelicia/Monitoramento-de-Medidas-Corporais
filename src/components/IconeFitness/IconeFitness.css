@@ -1,13 +1,17 @@
 .icone-fit-person {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    margin: 1.25rem 0;
-    flex-wrap: wrap;
-  }
-  
-  .icone-img {
-    width: 12rem;
-    height: 24rem;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  max-width: 300px; /* Ajuste conforme necessário */
+  margin: auto;
+}
+
+.icone-img {
+  width: 100%;
+  max-width: 200px; /* Ajustável para melhor proporção */
+  height: auto;
+  display: block;
+}
+

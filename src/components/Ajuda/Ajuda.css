@@ -1,7 +1,7 @@
 /* Contêiner principal da página de ajuda */
 .container-ajuda {
   padding: var(--spacing-large);
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
   background-color: var(--form-background-color);
   border-radius: var(--border-radius-large);

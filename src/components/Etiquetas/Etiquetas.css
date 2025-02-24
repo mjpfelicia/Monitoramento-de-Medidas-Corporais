@@ -1,16 +1,20 @@
 .etiquetas {
-  display: flex;
-  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
 }
 
 .etiqueta {
-  margin-bottom: 10px;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 0.2rem 0.5rem;
-  border-radius: 0.3rem;
-  font-size: 0.75rem;
   position: absolute;
-  pointer-events: none;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
 }
 
 .etiqueta-peitoral {
@@ -47,13 +51,13 @@
 }
 
 .etiqueta-coxa {
-  top: 12.5rem;
-  left: 50%;
-  transform: translateX(-94%);
+  top: 13.5rem;
+  left: 54%;
+  transform: translateX(-123%);
 }
 
 .etiqueta-braco {
   top: 7rem;
-  left: 54%;
+  left: 64%;
 
 }
