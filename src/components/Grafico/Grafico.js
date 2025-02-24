@@ -3,6 +3,8 @@ import Modal from 'react-modal';
 import { Line } from 'react-chartjs-2';
 import { Chart, registerables } from 'chart.js';
 import 'chartjs-adapter-date-fns';
+import './Grafico.css';
+
 
 Chart.register(...registerables);
 
@@ -154,8 +156,8 @@ const Grafico = ({ dados }) => {
   };
 
   return (
-    <div>
-      <button onClick={() => setModalIsOpen(true)}>Ver Gráfico</button>
+    <div className="grafico-container">
+      <button className='button_grafico' onClick={() => setModalIsOpen(true)}>Ver Gráfico</button>
       <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)} contentLabel="Gráfico de Medidas">
         <h2>Gráfico de Medidas</h2>
         <Line data={data} options={options} />

@@ -58,18 +58,11 @@
   box-sizing: border-box;
 }
 
-body,
-html {
+body {
   font-family: var(--font-family);
   background-color: var(--background-color);
   margin: 0;
-  padding: 1.25rem;
   color: var(--text-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Para garantir que ocupe 100% da altura da tela */
-  text-align: center;
 }
 
 

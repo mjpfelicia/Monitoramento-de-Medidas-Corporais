@@ -1,0 +1,20 @@
+.grafico-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: var(--spacing-medium);
+    height: 100vh;
+
+}
+
+.button_grafico{
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    margin: 0.5rem;
+    font-size: 1rem
+}

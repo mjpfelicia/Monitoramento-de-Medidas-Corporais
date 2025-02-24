@@ -1,58 +1,77 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import { initializeApp } from 'firebase/app';
+import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import './Login.css';
+import { environment } from '../../config/environments';
+
+// Configuração do Firebase
+const firebaseConfig = {
+  ...environment.firebase,
+  projectId: "medidascorporais-819b6",
+  storageBucket: "medidas",
+};
+
+// Inicializa o Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const googleProvider = new GoogleAuthProvider();
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [user, setUser] = useState(null);  // Estado para armazenar as informações do usuário
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Adicione aqui a lógica de autenticação (ex: Firebase)
-    if (email && password) {
-      // Exemplo de lógica de autenticação
-      // auth.signInWithEmailAndPassword(email, password)
-      //   .then(() => {
-      //     setError('');
-      //     onClose(); // Fechar o modal após login
-      //     navigate('/'); // Opcional: redirecionar após o login
-      //   })
-      //   .catch((err) => setError(err.message));
-      console.log('Login realizado com sucesso');
-      navigate('/');
-    } else {
-      setError('Todos os campos são obrigatórios');
+  const handleGoogleLogin = async () => {
+    try {
+      setLoading(true);
+      const result = await signInWithPopup(auth, googleProvider);
+      const userData = result.user;
+      console.log('Login com Google realizado com sucesso:', userData);
+
+      const { photoURL, displayName, email, phoneNumber } = userData?.providerData?.[0];
+      setUser({ photoURL, displayName, email, phoneNumber });  // Atualiza o estado com os dados do usuário
+
+      navigate('/formulario');
+    } catch (error) {
+      console.error("Erro ao fazer login com Google:", error);
+      setError('Erro ao fazer login com Google: ' + error.message);
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <div className="login-container">
       <h2>Login</h2>
+
       {error && <p className="error-message">{error}</p>}
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Email:</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Senha:</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <button type="submit">Entrar</button>
-      </form>
+
+      {/* Botão de Login do Google */}
+      <button
+        type="button"
+        onClick={handleGoogleLogin}
+        className="google-login-button"
+        disabled={loading}
+      >
+        {loading ? 'Carregando...' : 'Entrar com Gmail'}
+      </button>
+
       <p>
         Não tem uma conta? <Link to="/register">Clique aqui para registrar</Link>
       </p>
+
+      {/* Exibir as informações do usuário após o login */}
+      {user && (
+        <div className="user-info">
+          <h3>Informações do Usuário:</h3>
+          <p><strong>Nome:</strong> {user.displayName}</p>
+          <p><strong>Email:</strong> {user.email}</p>
+          <p><strong>Telefone:</strong> {user.phoneNumber || 'Não fornecido'}</p>
+          <img src={user.photoURL} alt="Foto do Usuário" />
+        </div>
+      )}
     </div>
   );
 };

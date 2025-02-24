@@ -8,6 +8,7 @@ import './Menu.css';
 const Menu = ({ isAuthenticated, userName, handleLogout }) => {
   const [showModal, setShowModal] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);  // Controle do menu responsivo
+  const [userData, setUserData] = useState(null);  // Armazenar os dados do usuário (nome, email, foto)
 
   const handleLoginClick = () => {
     setShowModal(true);
@@ -19,6 +20,15 @@ const Menu = ({ isAuthenticated, userName, handleLogout }) => {
 
   const toggleMenu = () => {
     setIsMenuOpen(prevState => !prevState);  // Alterna o estado do menu responsivo
+  };
+
+  const handleLoginSuccess = (user) => {
+    // Ao logar, você pega as informações do usuário e atualiza o estado
+    setUserData({
+      displayName: user.displayName,
+      email: user.email,
+      photoURL: user.photoURL
+    });
   };
 
   return (
@@ -56,10 +66,13 @@ const Menu = ({ isAuthenticated, userName, handleLogout }) => {
           </li>
         )}
 
-        {isAuthenticated && (
+        {isAuthenticated && userData && (
           <>
             <li>
-              <span>Olá, {userName}</span>
+              <span>Olá, {userData.displayName}</span>
+            </li>
+            <li>
+              <img src={userData.photoURL} alt="Foto do usuário" className="user-photo" />
             </li>
             <li>
               <button onClick={handleLogout} className="logout-button">
@@ -71,7 +84,7 @@ const Menu = ({ isAuthenticated, userName, handleLogout }) => {
       </ul>
       
       <Modal show={showModal} onClose={handleCloseModal}>
-        <Login />
+        <Login onLoginSuccess={handleLoginSuccess} /> {/* Passando a função de sucesso para o componente Login */}
       </Modal>
     </nav>
   );

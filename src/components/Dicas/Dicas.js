@@ -11,7 +11,6 @@ const Dicas = () => (
       <li>Meça sempre no mesmo horário do dia, preferencialmente de manhã.</li>
       <li>Mantenha a fita alinhada e não aperte demais.</li>
       <li><Link className='li__dicas' to="/ajuda">Ajuda</Link></li>
-      <li><Link className='li__calcular' to="/IMCForm">Calculadora de IMC</Link></li>
     </ul>
   </section>
 );
