@@ -11,6 +11,19 @@
     color: var(--text-color);
 }
 
+.objetivos-exibidos,
+.medidas-exibidas,
+.diferencas-exibidas,
+.porcentagens-exibidas {
+    margin-top: 20px;
+    background-color: var(--background-color);
+    padding: 20px;
+    border-radius: 10px;
+    font-family: var(--font-family);
+    color: var(--text-color);
+    text-align: justify;
+}
+
 .campo-objetivo {
     margin-bottom: 10px;
 }

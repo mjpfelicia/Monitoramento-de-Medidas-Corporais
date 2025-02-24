@@ -68,6 +68,17 @@ const CalculoMacronutrientes = () => {
       carboidratos,
       gorduras
     });
+
+    // Salva os resultados no localStorage
+    const macronutrientes = {
+      caloriasObjetivo,
+      proteinas,
+      carboidratos,
+      gorduras
+    };
+
+    // Salva os dados no localStorage
+    localStorage.setItem('macronutrientes', JSON.stringify(macronutrientes));
   };
 
   return (

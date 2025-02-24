@@ -8,6 +8,18 @@
   background-color: var(--form-background-color);
   border-radius: var(--border-radius-medium);
   box-shadow: 0 4px 8px var(--form-box-shadow);
+  
+}
+
+/* Estilo para o título principal do componente */
+.macronutrientes-exibidos{
+  margin-top: 20px;
+    background-color: var(--background-color);
+    padding: 20px;
+    border-radius: 10px;
+    font-family: var(--font-family);
+    color: var(--text-color);
+    text-align: justify;
 }
 
 /* Título principal do componente */
