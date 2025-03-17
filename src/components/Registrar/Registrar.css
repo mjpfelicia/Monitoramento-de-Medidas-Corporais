@@ -1,0 +1,32 @@
+.container_registrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1REM;
+    height: 100vh;
+    background-color: var(--bg-color);
+}
+
+.form_registrar {
+    margin: 0 auto;
+    padding: 2.25rem;
+    background-color: var(--modal-bg-color);
+    box-shadow: 0 0 0.625rem var(--modal-box-shadow);
+    border-radius: 0.625rem;
+    font-family: var(--font-family);
+    color: var(--text-color);
+    text-align: center;
+}
+
+input {
+    width: 100%;
+    padding: 0.625rem;
+    margin: 0.625rem 0;
+    border: 1px solid var(--input-border-color);
+    border-radius: 0.3125rem;
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    color: var(--text-color);
+    background-color: var(--input-bg-color);
+}

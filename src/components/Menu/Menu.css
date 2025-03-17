@@ -22,7 +22,7 @@
 .menu-nav ul li button {
   color: var(--menu-link-color);
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;

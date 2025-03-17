@@ -18,7 +18,7 @@
 }
 
 .etiqueta-peitoral {
-  top: 4.5rem;
+  top: 3.5rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 999;
@@ -33,7 +33,7 @@
 }
 
 .etiqueta-abdomen {
-  top: 6.5rem;
+  top: 5.5rem;
   left: 50%;
   transform: translateX(-52%);
 }

@@ -1,7 +1,8 @@
 .monitoramento-medidas-container {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    background-color: var(--form-background-color);
+    background-color: var(--background-color);
     border-radius: var(--border-radius-medium);
+    box-shadow: var(--box-shadow-medium);
+    height: 100vh;
 }
 
 .monitoramento-medidas-container h2 {
