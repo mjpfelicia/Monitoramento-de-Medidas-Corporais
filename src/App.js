@@ -10,10 +10,10 @@ import Registrar from './components/Registrar/Register';
 import Ajuda from './components/Ajuda/Ajuda';
 import IMCForm from './components/IMCForm/IMCForm';
 import Dicas from './components/Dicas/Dicas';
+
 import ComposicaoCorporal from './components/ComposicaoCorporal/ComposicaoCorporal';
 import CalculoMacronutrientes from './components/CalculoMacronutrientes/CalculoMacronutrientes';
 import NotFound from './components/NotFound/NotFound';
-import Menu from './components/Menu/Menu'; // Adicionando o Menu
 
 import './App.css';
 
@@ -30,7 +30,7 @@ function App() {
           <Route path="/registrar" element={<Registrar />} />
           <Route path="/ajuda" element={<Ajuda />} />
           <Route path="/dicas" element={<Dicas />} />
-          <Route path="/imc" element={<IMCForm />} />
+          <Route path="/IMCForm" element={<IMCForm />} />
           <Route path="/composicao-corporal" element={<ComposicaoCorporal />} />
           <Route path="/calculo-macronutrientes" element={<CalculoMacronutrientes />} />
           <Route path="*" element={<NotFound />} /> {/* Not Found sempre no final */}
