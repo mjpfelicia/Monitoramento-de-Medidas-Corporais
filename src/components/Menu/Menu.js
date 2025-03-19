@@ -13,6 +13,7 @@ const menuItems = [
     { path: "/objetivos", label: "Definir Objetivos" }
   ]},
   { name: "Saúde e Medidas", icon: <FaWpforms />, links: [
+    { path: "/ajuda", label: "Tutoriais e Ajuda" },
     { path: "/formulario", label: "Adicionar Medidas" },
     { path: "/IMCForm", label: "Calculadora de IMC" },
     { path: "/composicao-corporal", label: "Análise de Composição Corporal" },
