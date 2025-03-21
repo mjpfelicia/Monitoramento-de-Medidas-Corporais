@@ -5,7 +5,8 @@
   margin: 0 auto;
   background-color: var(--form-background-color);
   border-radius: var(--border-radius-large);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  box-shadow: 0 4px 10px var(--form-box-shadow);
+  /* Sombra suave */
   font-family: var(--font-family);
   text-align: justify;
   box-sizing: border-box;
@@ -13,19 +14,25 @@
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
-  padding-bottom: var(--spacing-medium); /* Espaçamento inferior */
-  background: linear-gradient(135deg, #f0f0f0, #ffffff); /* Gradiente suave no fundo */
+  padding-bottom: var(--spacing-medium);
+  /* Espaçamento inferior */
+  background: linear-gradient(135deg, #f0f0f0, #ffffff);
+  /* Gradiente suave no fundo */
   background-size: 400% 400%;
-  animation: gradientAnimation 5s ease infinite; /* Animação suave do fundo */
+  animation: gradientAnimation 5s ease infinite;
+  /* Animação suave do fundo */
 }
 
+/* Animação de fundo suave */
 @keyframes gradientAnimation {
   0% {
     background-position: 400% 0%;
   }
+
   50% {
     background-position: 0% 100%;
   }
+
   100% {
     background-position: 400% 0%;
   }
@@ -33,7 +40,8 @@
 
 /* Título principal da página de ajuda */
 .container-ajuda h1 {
-  font-size: 2.2em;
+  font-size: 2em;
+  /* Tamanho menor e mais proporcional */
   color: var(--text-color);
   text-align: center;
   font-weight: 600;
@@ -46,29 +54,33 @@
 /* Estilo das seções */
 .container-ajuda section {
   border-bottom: 1px solid var(--table-border-color);
-  background-color: #fafafa; /* Fundo suave para separar seções */
-  padding: 20px;
-  border-radius: 10px; /* Borda arredondada nas seções */
-  margin-bottom: 20px;
+  background-color: #fafafa;
+  /* Fundo suave para separar seções */
+  padding: var(--spacing-medium);
+  border-radius: var(--border-radius-medium);
+  /* Borda arredondada nas seções */
+  margin-bottom: var(--spacing-large);
 }
 
 /* Títulos das seções */
 .container-ajuda h2 {
-  font-size: 1.8em;
+  font-size: 1.5em;
+  /* Tamanho adequado para os subtítulos */
   margin-bottom: var(--spacing-medium);
   color: var(--heading-color);
   font-weight: 500;
-  text-transform: uppercase; /* Letras maiúsculas para maior impacto */
-  letter-spacing: 1px; /* Espaçamento entre letras */
-  border-bottom: 2px solid #E5E5E5;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 2px solid var(--table-border-color);
   text-align: center;
-  padding: 1rem;
-  background-color: #f0f0f0; /* Fundo claro para títulos */
-  border-radius: 10px; /* Borda arredondada no título */
+  padding: 0.8rem;
+  background-color: #f0f0f0;
+  border-radius: var(--border-radius-medium);
 }
 
 /* Listas numeradas e com marcadores */
-.container-ajuda ol, .container-ajuda ul {
+.container-ajuda ol,
+.container-ajuda ul {
   margin-left: 30px;
   padding-left: 30px;
   list-style-position: inside;
@@ -78,7 +90,8 @@
 }
 
 /* Estilo para parágrafos e itens de lista */
-.container-ajuda p, .container-ajuda li {
+.container-ajuda p,
+.container-ajuda li {
   font-size: var(--font-size-base);
   line-height: 1.8;
   color: var(--text-color);
@@ -98,81 +111,16 @@
 
 /* Efeito de hover nos links */
 .container-ajuda a:hover {
-  color: #4a90e2; /* Cor de hover mais viva */
+  color: #4a90e2;
   text-decoration: underline;
-}
-
-/* Estilo para itens de FAQ */
-.faq-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.faq-item::before {
-  content: "•"; /* Adiciona o ponto */
-  color: var(--menu-hover-color); /* Cor do ponto */
-  font-size: 1.5rem;
-  margin-right: 10px;
-}
-
-.faq-item strong {
-  font-weight: bold;
-}
-
-.faq-item i {
-  font-size: 1.5rem;
-  transition: transform 0.3s ease, color 0.3s ease;
-  margin-left: 10px;
-}
-
-.faq-item i:hover {
-  transform: rotate(180deg); /* Animação de rotação suave */
-  color: var(--menu-hover-color); /* Mudança de cor ao passar o mouse */
-}
-
-/* Ajustes para dispositivos móveis */
-@media (max-width: 768px) {
-  .container-ajuda {
-    padding: var(--spacing-medium);
-    max-width: 100%;
-  }
-
-  .container-ajuda h1 {
-    font-size: 2.5em;
-    margin-top: 10px;
-  }
-
-  .container-ajuda h2 {
-    font-size: 1.8em;
-  }
-
-  .container-ajuda ol, .container-ajuda ul {
-    margin-left: 15px;
-    padding-left: 15px;
-  }
-
-  .container-ajuda p, .container-ajuda li {
-    font-size: var(--font-size-small);
-  }
-}
-
-/* Animação para itens de FAQ */
-.faq-item i {
-  font-size: 1.5rem;
-  transition: transform 0.3s ease, color 0.3s ease;
-  margin-left: 10px;
-}
-
-.faq-item i:hover {
-  transform: rotate(180deg); /* Efeito de rotação ao clicar */
-  color: var(--menu-hover-color);
 }
 
 /* Estilo de links úteis com ícones */
 .card-link {
   display: flex;
   align-items: center;
+  flex-direction: column;
+  gap: var(--spacing-medium);
   font-weight: 500;
   color: var(--text-color);
   text-decoration: none;
@@ -181,7 +129,8 @@
 }
 
 .card-link:hover {
-  transform: scale(1.05); /* Leve zoom no hover */
+  transform: scale(1.05);
+  /* Leve zoom no hover */
 }
 
 .card-icon {
@@ -192,44 +141,48 @@
 }
 
 .card-icon:hover {
-  transform: rotate(360deg); /* Animação de rotação no ícone */
+  transform: rotate(360deg);
+  /* Animação de rotação no ícone */
 }
 
 /* Contêiner de Cards */
 .cards-container {
   display: flex;
-  flex-wrap: wrap; /* Permite que os cards que não cabem em uma linha passem para a linha seguinte */
-  gap: 20px; /* Espaçamento entre os cards */
-  justify-content: space-between; /* Distribui os cards de forma equilibrada */
-  padding: 20px;
+  flex-wrap: wrap;
+  gap: var(--spacing-medium);
+  justify-content: space-between;
+  padding: var(--spacing-medium);
   box-sizing: border-box;
 }
 
 /* Estilo individual dos cards */
 .card {
-  flex: 1 1 calc(33% - 20px); /* Faz os cards ocuparem 1/3 da linha, com um espaço entre eles */
-  min-width: 280px; /* Garante que os cards não fiquem menores que um tamanho mínimo */
+  flex: 1 1 calc(33% - 20px);
+  min-width: 280px;
   background-color: #fff;
-  border-radius: 10px;
+  border-radius: var(--border-radius-medium);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  padding: var(--spacing-medium);
   text-align: center;
   transition: transform 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px); /* Efeito de elevação no hover */
+  transform: translateY(-5px);
+  /* Efeito de elevação no hover */
 }
 
 /* Responsividade: Para telas menores */
 @media (max-width: 768px) {
   .card {
-    flex: 1 1 calc(50% - 20px); /* Para telas menores, dois cards por linha */
+    flex: 1 1 calc(50% - 20px);
+    /* Dois cards por linha */
   }
 }
 
 @media (max-width: 480px) {
   .card {
-    flex: 1 1 100%; /* Para telas ainda menores, um card por linha */
+    flex: 1 1 100%;
+    /* Um card por linha */
   }
 }

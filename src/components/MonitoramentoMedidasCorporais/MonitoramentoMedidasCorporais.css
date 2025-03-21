@@ -3,18 +3,27 @@
     border-radius: var(--border-radius-medium);
     box-shadow: var(--box-shadow-medium);
     height: 100vh;
+ 
 }
 
+/* === TEXTOS === */
 .monitoramento-medidas-container h2 {
     margin-bottom: var(--spacing-small);
     color: var(--heading-color);
+    font-weight: bold;
+    text-align: center;
 }
 
 .monitoramento-medidas-container p {
     font-size: var(--font-size-base);
     color: var(--text-color);
+    text-align: center;
 }
-
+.conteudo{
+margin-top: 5rem;
+}
+  
+/* === FORMULÁRIOS === */
 input[type="text"],
 input[type="number"] {
     width: 100%;
@@ -23,8 +32,17 @@ input[type="number"] {
     border: 1px solid var(--input-border-color);
     background-color: var(--input-background-color);
     border-radius: var(--border-radius-small);
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+    outline: none;
+}
+
+/* === ÍCONE FITNESS === */
 .icon-fit-person {
     position: relative;
     display: flex;
@@ -36,8 +54,14 @@ input[type="number"] {
 .icon-img {
     max-width: 100%;
     height: auto;
+    transition: transform 0.3s ease-in-out;
 }
 
+.icon-img:hover {
+    transform: scale(1.05);
+}
+
+/* === RESPONSIVIDADE === */
 @media (max-width: 600px) {
     table,
     thead,
@@ -51,9 +75,8 @@ input[type="number"] {
     th,
     td {
         padding: var(--table-padding);
-        text-align: right;
+        text-align: left; /* Melhor usabilidade em telas pequenas */
         position: relative;
-        border: none;
         border-bottom: 0.0625rem solid var(--table-border-color);
     }
 
@@ -62,9 +85,6 @@ input[type="number"] {
         content: attr(data-label);
         position: absolute;
         left: var(--spacing-small);
-        width: calc(50% - var(--spacing-medium));
-        padding-right: var(--spacing-small);
-        text-align: left;
         font-weight: bold;
     }
 
@@ -72,17 +92,7 @@ input[type="number"] {
         background-color: transparent;
     }
 
-    td {
-        border: none;
-        padding-left: 0;
-        text-align: left; /* Alinhamento à esquerda */
-    }
-
     td:last-child {
         border-bottom: 0;
-    }
-
-    td[data-label]::before {
-        content: attr(data-label);
     }
 }

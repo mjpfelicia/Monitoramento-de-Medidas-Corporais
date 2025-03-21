@@ -112,7 +112,7 @@ const Ajuda = () => {
           </div>
 
           <div className="card">
-            <Link to="/dica" className="card-link">
+            <Link to="/dicas" className="card-link">
               <div className="card-icon">
                 <i className="fas fa-ruler"></i>
               </div>
@@ -124,7 +124,7 @@ const Ajuda = () => {
           </div>
 
           <div className="card">
-            <Link to="/ComposicaoCorporal" className="card-link">
+            <Link to="/composicao-corporal" className="card-link">
               <div className="card-icon">
                 <i className="fas fa-dna"></i>
               </div>
@@ -136,7 +136,7 @@ const Ajuda = () => {
           </div>
 
           <div className="card">
-            <Link to="/CalculoMacronutrientes" className="card-link">
+            <Link to="/calculo-macronutrientes" className="card-link">
               <div className="card-icon">
                 <i className="fas fa-chart-pie"></i>
               </div>
