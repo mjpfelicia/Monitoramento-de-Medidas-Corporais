@@ -1,37 +1,31 @@
-name: Build and Deploy
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main, master ]
-  pull_request:
-    branches: [ main, master ]
+    branches: [ main ]
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [16.x]
-
+    
     steps:
-    - name: Checkout repository
+    - name: Checkout
       uses: actions/checkout@v3
-
-    - name: Set up Node.js ${{ matrix.node-version }}
+      
+    - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: '16'
         cache: 'npm'
-
+        
     - name: Install dependencies
       run: npm ci
-
+      
     - name: Build
       run: npm run build
-
-    - name: Upload build artifacts
-      uses: actions/upload-artifact@v3
+      
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
-        name: build-files
-        path: docs/
+        folder: build
+        branch: gh-pages
