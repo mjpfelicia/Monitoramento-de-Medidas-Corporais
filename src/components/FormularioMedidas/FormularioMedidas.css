@@ -1,23 +1,41 @@
-#formulario-medidas {
-  background-color: var(--modal-bg-color);
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px var(--modal-box-shadow);
-  max-width: var(--max-width);
-  margin: 20px auto;
-}
-
+/* Container das Medidas */
 .container-medidas {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-direction: column;
+  padding: 1rem;
 }
 
+/* Formulário de Medidas */
+#formulario-medidas {
+  width: 60vw; /* Largura que se adapta à tela */
+  max-width: 1300px; /* Limita a largura para telas grandes */
+  padding: 2rem;
+  background-color: var(--modal-bg-color);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra mais suave e moderna */
+  border-radius: 1rem; /* Bordas arredondadas */
+  font-family: 'Poppins', sans-serif; /* Fonte moderna */
+  color: var(--text-color);
+  position: relative;
+  top: auto;
+  margin-top: 3rem;
+  margin-bottom: 3rem; /* Maior espaçamento no topo */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+
+
+}
+
+/* Tabela com Rolagem Horizontal */
 .tabela-container {
   overflow-x: auto;
   margin: 2rem 0;
 }
 
+/* Tabela de Medidas */
 #tabela-medidas {
   width: 100%;
   border-collapse: collapse;
@@ -34,6 +52,7 @@
   background-color: var(--table-header-bg-color);
 }
 
+/* Inputs com estilo */
 input[type="number"],
 input[type="date"] {
   width: 100%;
@@ -41,8 +60,16 @@ input[type="date"] {
   box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 4px;
+  margin-bottom: 10px;
 }
 
+/* Estilo de input com erro */
+input.error {
+  border-color: #e74c3c;
+  background-color: #f9c2c2;
+}
+
+/* Botões */
 button {
   background-color: var(--button-bg-color);
   color: var(--button-text-color);
@@ -51,16 +78,19 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease-in-out;
 }
 
 button:hover {
   background-color: var(--button-hover-bg-color);
+  transform: translateY(-2px); /* Efeito de elevação */
 }
 
 button[type="button"] {
   margin-right: 10px;
 }
 
+/* Botão de Histórico */
 .btn-history {
   background-color: #4a90e2;
   color: white;
@@ -68,8 +98,14 @@ button[type="button"] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
+.btn-history:hover {
+  background-color: #357ab7; /* Cor ao passar o mouse */
+}
+
+/* Container de Histórico */
 .historico-container {
   margin-top: 20px;
   padding: 20px;
@@ -78,6 +114,7 @@ button[type="button"] {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Tabela de Histórico */
 .tabela-historico {
   width: 100%;
   border-collapse: collapse;
@@ -94,4 +131,56 @@ button[type="button"] {
 .tabela-historico th {
   background-color: #f5f5f5;
   font-weight: bold;
+}
+
+/* Estilos para telas menores */
+
+@media (max-width: 768px) {
+  #formulario-medidas {
+    width: 90vw; /* Ajusta a largura para telas pequenas */
+    padding: 1.5rem; /* Reduz o padding */
+  }
+
+  .container-medidas {
+    justify-content: center;
+  }
+
+  .tabela-container {
+    margin: 1rem 0;
+  }
+
+  #tabela-medidas th, #tabela-medidas td {
+    padding: 8px;
+  }
+
+  input[type="number"], input[type="date"] {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  button {
+    width: 100%; /* Botões ocupam toda a largura disponível */
+  }
+}
+
+@media (max-width: 480px) {
+  .historico-container {
+    padding: 10px;
+  }
+
+  .tabela-historico th, .tabela-historico td {
+    padding: 10px;
+  }
+
+  button {
+    padding: 10px;
+  }
+
+  #tabela-medidas {
+    font-size: 14px; /* Ajuste da tabela para dispositivos móveis */
+  }
+
+  input[type="number"], input[type="date"] {
+    font-size: 14px;
+  }
 }

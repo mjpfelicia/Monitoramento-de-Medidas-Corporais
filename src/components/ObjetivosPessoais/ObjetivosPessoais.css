@@ -1,14 +1,23 @@
+/* Estilo do formulário */
 #formulario-objetivos {
-    margin-top: 20px;
     margin: 0 auto;
-    width: 70vw;
-    max-width: var(--max-width);
-    padding: 2.25rem;
+    width: 80%;  /* Largura que se adapta à tela */
+    max-width: 1300px;  /* Limita a largura para telas grandes */
+    padding: 2rem;
     background-color: var(--modal-bg-color);
-    box-shadow: 0 0 0.625rem var(--modal-box-shadow);
-    border-radius: 0.625rem;
-    font-family: var(--font-family);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);  /* Sombra mais suave e moderna */
+    border-radius: 1rem;  /* Bordas arredondadas */
+    font-family: 'Poppins', sans-serif;  /* Fonte moderna */
     color: var(--text-color);
+    position: relative;
+    top: auto;
+    margin-top: 3rem; 
+    margin-bottom: 3rem; /* Maior espaçamento no topo */
+    transition: all 0.3s ease;  /* Transição suave para qualquer alteração */
+}
+
+#formulario-objetivos:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);  /* Efeito de sombra mais forte ao passar o mouse */
 }
 
 .objetivos-exibidos,
@@ -19,48 +28,124 @@
     background-color: var(--background-color);
     padding: 20px;
     border-radius: 10px;
-    font-family: var(--font-family);
     color: var(--text-color);
     text-align: justify;
+    transition: background-color 0.3s ease;  /* Transição suave para o fundo */
 }
 
+/* Alteração de cor no hover */
+.objetivos-exibidos:hover {
+    background-color: #f0f0f0;
+}
+
+/* Estilo dos campos de objetivo */
 .campo-objetivo {
-    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.campo-objetivo:hover {
+    transform: scale(1.05);  /* Efeito de aumento ao passar o mouse */
 }
 
 #formulario-objetivos h2, h3 {
     color: var(--heading-color);
-    margin-bottom: 0.9rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
-
+/* Estilo do botão */
 #formulario-objetivos button {
-    margin-top: 10px;
-    padding: var(--input-padding);
+    margin-top: 20px;
+    padding: 0.8rem 1.5rem;
     background-color: var(--button-bg-color);
     color: var(--button-text-color);
     border: none;
     cursor: pointer;
-    font-family: var(--font-family);
+    font-family: 'Poppins', sans-serif;
+    border-radius: 25px;  /* Bordas arredondadas para o botão */
+    font-weight: 500;
+    transition: all 0.3s ease;  /* Transição suave ao passar o mouse */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #formulario-objetivos button:hover {
     background-color: var(--button-hover-bg-color);
-    color: var(--button-hover-text-color);
+    transform: translateY(-3px);  /* Efeito de "subir" o botão ao passar o mouse */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);  /* Aumenta a sombra para criar a sensação de elevação */
 }
 
-.objetivos-exibidos {
-    margin-top: 20px;
-    background-color: var(--background-color);
-    padding: 20px;
-    border-radius: 10px;
-    font-family: var(--font-family);
-    color: var(--text-color);
-    text-align: justify;
-}
-
-.objetivos-exibidos h3 {
+/* Títulos */
+#formulario-objetivos h3 {
     color: var(--heading-color);
     text-align: center;
-    margin-bottom: 2rem;
+    font-size: 1.3rem;
+}
+
+/* Estilo de exibição de objetivos */
+.objetivos-exibidos {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    transition: transform 0.3s ease;  /* Animação de transformação */
+}
+
+.objetivos-exibidos:hover {
+    transform: translateY(-5px);  /* Efeito de elevação */
+}
+
+
+.diferenca {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+  
+  .positivo {
+    color: green;
+  }
+  
+  .negativo {
+    color: red;
+  }
+  
+
+/* Responsividade para tablets (max-width: 768px) */
+@media (max-width: 768px) {
+    #formulario-objetivos {
+        width: 90%;  /* Largura mais fluida em telas médias */
+        padding: 1.5rem;
+    }
+
+    #formulario-objetivos h2, h3 {
+        font-size: 1.25rem;
+    }
+
+    #formulario-objetivos button {
+        width: 100%;  /* Tornando o botão responsivo */
+    }
+
+    .exibidos {
+        padding: 15px;
+    }
+}
+
+/* Responsividade para telas pequenas (max-width: 480px) */
+@media (max-width: 480px) {
+    #formulario-objetivos {
+        width: 95%;  /* Ajuste para telas menores */
+        padding: 1rem;
+    }
+
+    #formulario-objetivos h2 {
+        font-size: 1.1rem;
+    }
+
+    #formulario-objetivos h3 {
+        font-size: 1rem;
+    }
+
+    #formulario-objetivos button {
+        padding: 0.8rem;
+    }
 }
