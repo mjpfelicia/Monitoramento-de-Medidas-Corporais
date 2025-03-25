@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './ObjetivosPessoais.css';
-import Modalobj from '../Modal/Modalobj'; 
+import Modalobj from '../Modal/Modalobj';
 
 const ObjetivosPessoais = () => {
   const [objetivos, setObjetivos] = useState({
@@ -106,20 +106,13 @@ const ObjetivosPessoais = () => {
 
   return (
     <div id="formulario-objetivos">
-
       <form onSubmit={handleSubmit}>
         <h3>Objetivos Físicos</h3>
         {Object.keys(objetivos).map((key) => (
           <div className="campo-objetivo" key={key}>
             <label>
               {key.charAt(0).toUpperCase() + key.slice(1)}:
-              <input
-                type="number"
-                name={key}
-                value={objetivos[key]}
-                onChange={handleChangeObjetivos}
-                placeholder="Objetivo"
-              />
+              <input type="number" name={key} value={objetivos[key]} onChange={handleChangeObjetivos} placeholder="Objetivo" />
             </label>
           </div>
         ))}
@@ -129,13 +122,7 @@ const ObjetivosPessoais = () => {
           <div className="campo-objetivo" key={key}>
             <label>
               {key.charAt(0).toUpperCase() + key.slice(1)}:
-              <input
-                type="number"
-                name={key}
-                value={medidasAtuais[key]}
-                onChange={handleChangeMedidas}
-                placeholder="Medida Atual"
-              />
+              <input type="number" name={key} value={medidasAtuais[key]} onChange={handleChangeMedidas} placeholder="Medida Atual" />
             </label>
           </div>
         ))}
@@ -210,8 +197,6 @@ const ObjetivosPessoais = () => {
             </ul>
           </div>
         </div>
-
-      
       </Modalobj>
     </div>
   );

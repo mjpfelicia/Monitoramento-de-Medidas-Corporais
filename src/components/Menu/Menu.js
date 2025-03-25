@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 import { FaChartBar, FaBullseye, FaWpforms, FaSignInAlt, FaSignOutAlt, FaChevronDown } from 'react-icons/fa';
 import Modal from '../Modal/Modal';
 import Login from '../Login/Login';
@@ -60,7 +61,7 @@ const Menu = ({ isAuthenticated, userName, handleLogout }) => {
         
         {!isAuthenticated ? (
           <li>
-            <button onClick={handleLoginClick} className="login-button">
+            <button onClick={handleLoginClick} className="dropdown-button">
               <FaSignInAlt /> Login
             </button>
           </li>
@@ -69,7 +70,7 @@ const Menu = ({ isAuthenticated, userName, handleLogout }) => {
             <li><span>Olá, {userData?.displayName}</span></li>
             <li><img src={userData?.photoURL} alt="Foto do usuário" className="user-photo" /></li>
             <li>
-              <button onClick={handleLogout} className="logout-button">
+              <button onClick={handleLogout} className="dropdown-button">
                 <FaSignOutAlt /> Logout
               </button>
             </li>

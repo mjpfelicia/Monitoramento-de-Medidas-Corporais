@@ -1,7 +1,7 @@
+import React from 'react';
 import './Header.css';
 
-
-const Cabecalho = () => (
+const Header = () => (
   <>
     <header className="header">
       <h1 className="header__title">Projeto de Monitoramento de Medidas Corporais</h1>
@@ -10,4 +10,4 @@ const Cabecalho = () => (
   </>
 );
 
-export default Cabecalho;
+export default Header;
