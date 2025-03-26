@@ -4,7 +4,7 @@ Este projeto é uma aplicação React que permite aos usuários registrar e visu
 
 ## Imagem do Site
 
-![Imagem do Site](/public/tela2.png)
+![Imagem do Site](/public/screencapture-loctela3.png)
 
 ## Tecnologias Utilizadas
 
