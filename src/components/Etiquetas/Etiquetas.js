@@ -15,22 +15,22 @@ const Etiquetas = ({ objetivos, medidasAtuais }) => {
   return (
     <div className="etiquetas">
       <div className="etiqueta etiqueta-peitoral">
-        Peitoral: {safeMedidasAtuais.peitoral || 'Defina seu objetivo'}
+        Peitoral: {safeMedidasAtuais?.peitoral || 'Defina seu objetivo'}
       </div>
       <div className="etiqueta etiqueta-abdomen">
-        Abdômen: {safeMedidasAtuais.abdomem || 'Defina seu objetivo'}
+        Abdômen: {safeMedidasAtuais?.abdomem || 'Defina seu objetivo'}
       </div>
       <div className="etiqueta etiqueta-cintura">
-        Cintura: {safeMedidasAtuais.cintura || 'Defina seu objetivo'}
+        Cintura: {safeMedidasAtuais?.cintura || 'Defina seu objetivo'}
       </div>
       <div className="etiqueta etiqueta-quadril">
-        Quadril: {safeMedidasAtuais.quadril || 'Defina seu objetivo'}
+        Quadril: {safeMedidasAtuais?.quadril || 'Defina seu objetivo'}
       </div>
       <div className="etiqueta etiqueta-coxa">
-        Coxa: {safeMedidasAtuais.coxa || 'Defina seu objetivo'}
+        Coxa: {safeMedidasAtuais?.coxa || 'Defina seu objetivo'}
       </div>
       <div className="etiqueta etiqueta-braco">
-        Braço: {safeMedidasAtuais.braco || 'Defina seu objetivo'}
+        Braço: {safeMedidasAtuais?.braco || 'Defina seu objetivo'}
 
 
       </div>

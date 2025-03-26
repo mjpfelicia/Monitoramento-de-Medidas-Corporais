@@ -19,7 +19,7 @@ import './App.css';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/Monitoramento-de-Medidas-Corporais">
       <div className="App">
         <Routes>
           <Route path="/" element={<MonitoramentoMedidasCorporais />} />
