@@ -31,15 +31,17 @@ const ResultadoModal = ({ isOpen, onClose, diferencas, porcentagens, macronutrie
           </ul>
         </div>
 
-        <div>
-          <h4>Macronutrientes Essenciais</h4>
-          <ul>
+        <section>
+          <h4 className="font-medium text-gray-700">Macronutrientes Essenciais</h4>
+          <ul className="list-disc list-inside text-gray-600">
+            <li>Peso Atual: {macronutrientes.peso} kg</li>
             <li>Calorias para o Objetivo: {macronutrientes.caloriasObjetivo} kcal</li>
             <li>Proteínas: {macronutrientes.proteinas} g</li>
             <li>Carboidratos: {macronutrientes.carboidratos} g</li>
             <li>Gorduras: {macronutrientes.gorduras} g</li>
           </ul>
-        </div>
+        </section>
+
       </div>
     </div>
   );

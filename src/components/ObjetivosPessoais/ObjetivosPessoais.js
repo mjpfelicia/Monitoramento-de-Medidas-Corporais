@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './ObjetivosPessoais.css';
 import Modalobj from '../Modal/Modalobj';
-
+import { obterDados } from '../../services/localStoreService';
+ 
 const ObjetivosPessoais = () => {
   const [objetivos, setObjetivos] = useState({
     peso: '',
@@ -36,7 +37,14 @@ const ObjetivosPessoais = () => {
 
   useEffect(() => {
     const objetivosSalvos = JSON.parse(localStorage.getItem('objetivos'));
-    const medidasAtuaisSalvas = JSON.parse(localStorage.getItem('medidasAtuais'));
+    //const medidasAtuaisSalvas = JSON.parse(localStorage.getItem('medidasAtuais'));
+    const medidasSalvas = obterDados('medidas');
+    const medidasAtuaisSalvas = Array.isArray(medidasSalvas)
+    ? medidasSalvas[medidasSalvas.length - 1]
+    : {};
+
+    console.log({ medidasSalvas, medidasAtuaisSalvas });
+
     const macronutrientesSalvos = JSON.parse(localStorage.getItem('macronutrientes'));
 
     if (objetivosSalvos) setObjetivos(objetivosSalvos);
@@ -61,9 +69,15 @@ const ObjetivosPessoais = () => {
     Object.keys(objetivos).forEach((key) => {
       const objetivo = Number(objetivos[key]) || 0;
       const medidaAtual = Number(medidasAtuais[key]) || 0;
+      console.log({ medidaAtual, objetivo, diferenca: novasDiferencas[key] });
+
 
       if (objetivo > 0 && medidaAtual > 0) {
         novasDiferencas[key] = objetivo - medidaAtual;
+
+        console.log({ medidaAtual, objetivo, diferenca: novasDiferencas[key] });
+
+
         novasPorcentagens[key] = ((novasDiferencas[key] / objetivo) * 100).toFixed(2);
       } else {
         novasDiferencas[key] = 0;
@@ -78,7 +92,6 @@ const ObjetivosPessoais = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     localStorage.setItem('objetivos', JSON.stringify(objetivos));
-    localStorage.setItem('medidasAtuais', JSON.stringify(medidasAtuais));
 
     calcularDiferencasEPorcentagens();
 
@@ -105,12 +118,12 @@ const ObjetivosPessoais = () => {
         ))}
 
         <h3>Medidas Atuais</h3>
-        {Object.keys(medidasAtuais).map((key) => (
+        {/* {Object.keys(medidasAtuais).map((key) => (
           <div className="campo-objetivo" key={key}>
             <label>
               {key.charAt(0).toUpperCase() + key.slice(1)}:
               <input
-                type="number"
+                type="text"
                 name={key}
                 value={medidasAtuais[key]}
                 onChange={handleChangeMedidas}
@@ -118,7 +131,7 @@ const ObjetivosPessoais = () => {
               />
             </label>
           </div>
-        ))}
+        ))} */}
 
         <button type="submit">Definir Objetivos</button>
       </form>

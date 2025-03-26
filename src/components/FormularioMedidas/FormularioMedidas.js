@@ -10,6 +10,7 @@ import { obterDados, salvarDados } from '../../services/localStoreService';
 const FormularioMedidas = () => {
   const [linhas, setLinhas] = useState([{
     data: '',
+    peso: '',
     peitoral: '',
     abdomem: '',
     cintura: '',
@@ -34,6 +35,7 @@ const FormularioMedidas = () => {
   const adicionarLinha = () => {
     setLinhas([...linhas, {
       data: '',
+      peso: '',
       peitoral: '',
       abdomem: '',
       cintura: '',
@@ -58,7 +60,7 @@ const FormularioMedidas = () => {
       if (nextIndex < form.length) {
         form.elements[nextIndex].focus();
       } else {
-        salvarMedidas(); // Se for o último campo, chama a função de salvar
+        salvarMedidas(); 
       }
     }
   };
@@ -84,6 +86,7 @@ const FormularioMedidas = () => {
       alert('Medidas salvas com sucesso!');
       setLinhas([{
         data: '',
+        peso: '',
         peitoral: '',
         abdomem: '',
         cintura: '',
@@ -183,6 +186,7 @@ const FormularioMedidas = () => {
           <table className="tabela-historico">
             <thead>
               <tr>
+                <th>Peso</th>
                 <th>Data</th>
                 <th>Peitoral</th>
                 <th>Abdômen</th>
@@ -196,12 +200,14 @@ const FormularioMedidas = () => {
               {medidas.map((medida, index) => (
                 <tr key={index}>
                   <td>{medida.data}</td>
+                  <td>{medida.peso}</td>
                   <td>{medida.peitoral}</td>
                   <td>{medida.abdomem}</td>
                   <td>{medida.cintura}</td>
                   <td>{medida.quadril}</td>
                   <td>{medida.coxa}</td>
                   <td>{medida.braco}</td>
+
                 </tr>
               ))}
             </tbody>

@@ -19,6 +19,17 @@ export const obterDados = (chave) => {
     }
 };
 
+export const pegarMedidasAtuais = (chave) => {
+    try {
+        const item = localStorage.getItem(chave);
+        const dados = item ? JSON.parse(item) : null;
+        return dados;
+    } catch (error) {
+        console.error('Erro ao obter dados:', error);
+        throw error;
+    }
+};
+
 export const removerDados = (chave) => {
     try {
         localStorage.removeItem(chave);
