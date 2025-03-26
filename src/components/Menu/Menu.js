@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import { FaChartBar, FaBullseye, FaWpforms, FaSignInAlt, FaSignOutAlt, FaChevronDown } from 'react-icons/fa';
 import Modal from '../Modal/Modal';
 import Login from '../Login/Login';
@@ -22,7 +21,7 @@ const menuItems = [
   ]}
 ];
 
-const Menu = ({ isAuthenticated, userName, handleLogout }) => {
+const Menu = ({ isAuthenticated, userName, handleLogout, setShowIcone }) => {
   const [showModal, setShowModal] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [userData, setUserData] = useState(null);
@@ -30,7 +29,11 @@ const Menu = ({ isAuthenticated, userName, handleLogout }) => {
 
   const handleLoginClick = () => setShowModal(true);
   const handleCloseModal = () => setShowModal(false);
-  const toggleMenu = () => setIsMenuOpen(prev => !prev);
+  const toggleMenu = () => {
+    setIsMenuOpen(prev => !prev);
+    // Esconde o ícone de fitness sempre que o menu for aberto
+    setShowIcone(false);
+  };
   const toggleDropdown = (index) => setOpenDropdown(prev => (prev === index ? null : index));
   
   const handleLoginSuccess = (user) => {

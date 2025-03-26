@@ -20,5 +20,6 @@
   ],
   "display": "standalone",
   "theme_color": "#000000",
+  "start_url": "/Monitoramento-de-Medidas-Corporais",
   "background_color": "#ffffff"
 }

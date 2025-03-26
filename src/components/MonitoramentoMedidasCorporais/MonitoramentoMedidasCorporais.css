@@ -1,98 +1,122 @@
+/* Garantir que o contêiner principal ocupe toda a altura da tela */
 .monitoramento-medidas-container {
-    background-color: var(--background-color);
-    border-radius: var(--border-radius-medium);
-    box-shadow: var(--box-shadow-medium);
-    height: 100vh;
- 
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Garante que o contêiner ocupe 100% da altura da tela */
+}
+
+/* Conteúdo principal */
+.conteudo {
+  flex: 1; /* Faz o conteúdo ocupar o espaço restante */
+  padding-top: 5rem; /* Ajuste o padding conforme necessário */
+  padding-bottom: 2rem; /* Adiciona um padding inferior para evitar sobreposição com o footer */
 }
 
 /* === TEXTOS === */
 .monitoramento-medidas-container h2 {
-    margin-bottom: var(--spacing-small);
-    color: var(--heading-color);
-    font-weight: bold;
-    text-align: center;
+  margin-bottom: var(--spacing-small);
+  color: var(--heading-color);
+  font-weight: bold;
+  text-align: center;
 }
 
 .monitoramento-medidas-container p {
-    font-size: var(--font-size-base);
-    color: var(--text-color);
-    text-align: center;
+  font-size: var(--font-size-base);
+  color: var(--text-color);
+  text-align: center;
 }
-.conteudo{
-margin-top: 5rem;
-}
-  
+
 /* === FORMULÁRIOS === */
 input[type="text"],
 input[type="number"] {
-    width: 100%;
-    padding: var(--input-padding);
-    box-sizing: border-box;
-    border: 1px solid var(--input-border-color);
-    background-color: var(--input-background-color);
-    border-radius: var(--border-radius-small);
-    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  width: 100%;
+  padding: var(--input-padding);
+  box-sizing: border-box;
+  border: 1px solid var(--input-border-color);
+  background-color: var(--input-background-color);
+  border-radius: var(--border-radius-small);
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 input[type="text"]:focus,
 input[type="number"]:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
-    outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+  outline: none;
 }
 
 /* === ÍCONE FITNESS === */
 .icon-fit-person {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    margin: var(--spacing-medium) 0;
-    flex-wrap: wrap;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: var(--spacing-medium) 0;
+  flex-wrap: wrap;
 }
 
 .icon-img {
-    max-width: 100%;
-    height: auto;
-    transition: transform 0.3s ease-in-out;
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
 }
 
 .icon-img:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
+}
+.icone-fitness {
+  transition: opacity 0.3s ease-out;
 }
 
 /* === RESPONSIVIDADE === */
 @media (max-width: 600px) {
-    table,
-    thead,
-    tbody,
-    th,
-    td,
-    tr {
-        display: block;
-    }
+  /* Adicionando estilo para dispositivos móveis */
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
 
-    th,
-    td {
-        padding: var(--table-padding);
-        text-align: left; /* Melhor usabilidade em telas pequenas */
-        position: relative;
-        border-bottom: 0.0625rem solid var(--table-border-color);
-    }
+  th,
+  td {
+    padding: var(--table-padding);
+    text-align: left; /* Melhor usabilidade em telas pequenas */
+    position: relative;
+    border-bottom: 0.0625rem solid var(--table-border-color);
+  }
 
-    th::before,
-    td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: var(--spacing-small);
-        font-weight: bold;
-    }
+  th::before,
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: var(--spacing-small);
+    font-weight: bold;
+  }
 
-    th {
-        background-color: transparent;
-    }
+  th {
+    background-color: transparent;
+  }
 
-    td:last-child {
-        border-bottom: 0;
-    }
+  td:last-child {
+    border-bottom: 0;
+  }
+
+  /* Ajustes no tamanho do ícone */
+  .icon-img {
+    width: 80%; /* Reduz o tamanho do ícone em telas pequenas */
+    margin: 0 auto; /* Centraliza o ícone */
+  }
+}
+
+/* Estilo do Footer */
+.footer {
+  background-color: var(--menu-background-color);
+  padding: 1rem;
+  color: var(--menu-link-color);
+  text-align: center;
+  margin-top: auto; /* Coloca o footer na parte inferior */
+  position: relative;
+  width: 100%;
 }

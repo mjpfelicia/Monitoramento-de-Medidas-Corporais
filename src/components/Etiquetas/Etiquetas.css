@@ -20,6 +20,22 @@
   transition: all 0.3s ease; /* Suaviza a transição no hover */
 }
 
+
+.tooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0.9;
+}
+
+
 /* Especificando o comportamento no hover */
 .etiqueta p {
   display: none;

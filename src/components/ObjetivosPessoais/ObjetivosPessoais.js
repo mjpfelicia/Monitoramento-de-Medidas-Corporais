@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './ObjetivosPessoais.css';
-import Modalobj from '../Modal/Modalobj'; 
+import Modalobj from '../Modal/Modalobj';
 
 const ObjetivosPessoais = () => {
   const [objetivos, setObjetivos] = useState({
@@ -30,30 +30,11 @@ const ObjetivosPessoais = () => {
     gorduras: 0,
   });
 
-  const [diferencas, setDiferencas] = useState({
-    peso: 0,
-    peitoral: 0,
-    abdomen: 0,
-    cintura: 0,
-    quadril: 0,
-    coxa: 0,
-    braco: 0,
-  });
-
-  const [porcentagens, setPorcentagens] = useState({
-    peso: 0,
-    peitoral: 0,
-    abdomen: 0,
-    cintura: 0,
-    quadril: 0,
-    coxa: 0,
-    braco: 0,
-  });
-
-  const [isModalOpen, setIsModalOpen] = useState(false); // Estado para controlar a visibilidade do modal
+  const [diferencas, setDiferencas] = useState({});
+  const [porcentagens, setPorcentagens] = useState({});
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
-    // Carregar os dados do localStorage
     const objetivosSalvos = JSON.parse(localStorage.getItem('objetivos'));
     const medidasAtuaisSalvas = JSON.parse(localStorage.getItem('medidasAtuais'));
     const macronutrientesSalvos = JSON.parse(localStorage.getItem('macronutrientes'));
@@ -65,12 +46,33 @@ const ObjetivosPessoais = () => {
 
   const handleChangeObjetivos = (e) => {
     const { name, value } = e.target;
-    setObjetivos({ ...objetivos, [name]: value });
+    setObjetivos({ ...objetivos, [name]: value ? Number(value) : '' });
   };
 
   const handleChangeMedidas = (e) => {
     const { name, value } = e.target;
-    setMedidasAtuais({ ...medidasAtuais, [name]: value });
+    setMedidasAtuais({ ...medidasAtuais, [name]: value ? Number(value) : '' });
+  };
+
+  const calcularDiferencasEPorcentagens = () => {
+    const novasDiferencas = {};
+    const novasPorcentagens = {};
+
+    Object.keys(objetivos).forEach((key) => {
+      const objetivo = Number(objetivos[key]) || 0;
+      const medidaAtual = Number(medidasAtuais[key]) || 0;
+
+      if (objetivo > 0 && medidaAtual > 0) {
+        novasDiferencas[key] = objetivo - medidaAtual;
+        novasPorcentagens[key] = ((novasDiferencas[key] / objetivo) * 100).toFixed(2);
+      } else {
+        novasDiferencas[key] = 0;
+        novasPorcentagens[key] = '0.00';
+      }
+    });
+
+    setDiferencas(novasDiferencas);
+    setPorcentagens(novasPorcentagens);
   };
 
   const handleSubmit = (e) => {
@@ -78,30 +80,9 @@ const ObjetivosPessoais = () => {
     localStorage.setItem('objetivos', JSON.stringify(objetivos));
     localStorage.setItem('medidasAtuais', JSON.stringify(medidasAtuais));
 
-    calcularDiferencas();
-    calcularPorcentagens();
-    setIsModalOpen(true); // Abre o modal após o envio do formulário
-  };
+    calcularDiferencasEPorcentagens();
 
-  const calcularDiferencas = () => {
-    const novasDiferencas = {};
-    Object.keys(objetivos).forEach((key) => {
-      if (objetivos[key] && medidasAtuais[key]) {
-        novasDiferencas[key] = objetivos[key] - medidasAtuais[key];
-      }
-    });
-    setDiferencas(novasDiferencas);
-  };
-
-  const calcularPorcentagens = () => {
-    const novasPorcentagens = {};
-    Object.keys(objetivos).forEach((key) => {
-      if (objetivos[key] && medidasAtuais[key]) {
-        const porcentagem = ((objetivos[key] - medidasAtuais[key]) / objetivos[key]) * 100;
-        novasPorcentagens[key] = porcentagem.toFixed(2);
-      }
-    });
-    setPorcentagens(novasPorcentagens);
+    setTimeout(() => setIsModalOpen(true), 100);
   };
 
   return (
@@ -142,11 +123,9 @@ const ObjetivosPessoais = () => {
         <button type="submit">Definir Objetivos</button>
       </form>
 
-      {/* Modal exibido após o envio do formulário */}
       <Modalobj show={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <h3>Objetivos definidos com sucesso!</h3>
 
-        {/* Seção de Exibição dos Objetivos e Medidas */}
         <div className="seção">
           <div className="objetivos-exibidos">
             <h3>Seus Objetivos</h3>
@@ -171,7 +150,6 @@ const ObjetivosPessoais = () => {
           </div>
         </div>
 
-        {/* Seção de Diferenças e Porcentagens */}
         <div className="seção">
           <div className="diferencas-exibidas">
             <h3>Diferença para atingir o objetivo</h3>
@@ -197,7 +175,6 @@ const ObjetivosPessoais = () => {
           </div>
         </div>
 
-        {/* Seção de Macronutrientes */}
         <div className="seção">
           <div className="macronutrientes-exibidos">
             <h3>Entenda os Nutrientes Essenciais para Chegar ao Seu Objetivo</h3>

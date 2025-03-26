@@ -1,6 +1,7 @@
 {
   "name": "medidas-corporais",
   "version": "0.1.0",
+  "homepage": "https://mjpfelicia.github.io/Monitoramento-de-Medidas-Corporais",
   "private": true,
   "dependencies": {
     "axios": "^1.7.9",
@@ -24,11 +25,11 @@
     "web-vitals": "^4.2.4"
   },
   "scripts": {
-    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "start": "react-scripts --openssl-legacy-provider start",
-    "build": "react-scripts --openssl-legacy-provider build"
+    "build": "react-scripts --openssl-legacy-provider build",
+    "deploy": "npm un build && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
