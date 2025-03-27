@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import React, { useState, useEffect } from 'react';  // Adicionando useState e useEffect
+import { useNavigate } from 'react-router-dom'; // Adicionando useNavigate
+import { ToastContainer, toast } from 'react-toastify'; // Adicionando ToastContainer e toast
+import 'react-toastify/dist/ReactToastify.css';  // Importando o CSS do react-toastify
 import './FormularioMedidas.css';
-import Grafico from '../Grafico/Grafico';
-import TabelaMedidas from '../Tabela/Tabela';
-import { obterDados, salvarDados } from '../../services/localStoreService';
+import Grafico from '../Grafico/Grafico';  // Importando o componente Grafico
+import TabelaMedidas from '../Tabela/Tabela';  // Importando o componente TabelaMedidas
+import { obterDados, salvarDados } from '../../services/localStoreService';  // Importando funções do serviço localStoreService
+
 
 const FormularioMedidas = () => {
   const [linhas, setLinhas] = useState([{
@@ -19,14 +20,11 @@ const FormularioMedidas = () => {
     braco: ''
   }]);
   const [medidas, setMedidas] = useState([]);
-  const [mostrarGrafico, setMostrarGrafico] = useState(false);
+  const [mostrarHistórico, setMostrarHistórico] = useState(false);  // Controle do histórico
   const navigate = useNavigate();
 
   useEffect(() => {
     const medidasSalvas = obterDados('medidas');
-
-    console.log({ medidasSalvas });
-
     if (medidasSalvas) {
       setMedidas(medidasSalvas);
     }
@@ -66,22 +64,16 @@ const FormularioMedidas = () => {
   };
 
   const salvarMedidas = () => {
-
-    console.log({ linhas });
     const medidasValidas = linhas.filter(linha =>
       linha.data && linha.peitoral && linha.abdomem && linha.cintura && linha.quadril && linha.coxa && linha.braco
     );
 
-    console.log({ medidasValidas });
-
     if (medidasValidas.length > 0) {
       setMedidas((prevMedidas) => [...prevMedidas, ...medidasValidas]);
       const medidasAntigas = obterDados('medidas');
-
       if (medidasAntigas && medidasAntigas.length > 0) {
         medidasAntigas.forEach(m => medidasValidas.push(m));
       }
-
       salvarDados('medidas', medidasValidas);
       alert('Medidas salvas com sucesso!');
       setLinhas([{
@@ -94,7 +86,6 @@ const FormularioMedidas = () => {
         coxa: '',
         braco: ''
       }]);
-      setMostrarGrafico(true);
     } else {
       alert('Preencha todas as medidas antes de salvar.');
     }
@@ -104,18 +95,12 @@ const FormularioMedidas = () => {
     navigate('/');
   };
 
-  const [mostrarHistórico, setMostrarHistórico] = useState(false);
-
   const mostrarHistóricoMedidas = () => {
     const medidasSalvas = obterDados('medidas');
-
     if (medidasSalvas) {
       setMedidas(medidasSalvas);
-      setMostrarHistórico(mostrarHistórico ? false : true);
-
-      console.log({ mostrarHistórico });
+      setMostrarHistórico(!mostrarHistórico);  // Alterna entre mostrar e esconder o histórico
     } else {
-      //alert('Nenhum histórico de medidas encontrado');
       toast.info('Nenhuma medida registrada ainda!', {
         position: "top-center",
         autoClose: 3000,
@@ -129,7 +114,7 @@ const FormularioMedidas = () => {
 
   return (
     <div className="container-medidas">
-      {!mostrarGrafico && (
+      {!mostrarHistórico && (
         <form id="formulario-medidas">
           <TabelaMedidas
             linhas={linhas}
@@ -158,26 +143,10 @@ const FormularioMedidas = () => {
               Ver Histórico
             </button>
             <div className="container-medidas">
-              {/* Your existing code */}
               <ToastContainer />
             </div>
           </div>
         </form>
-      )}
-
-      {mostrarGrafico && (
-        <div>
-          <Grafico dados={medidas} />
-          <div className="buttons-container">
-            <button
-              type="button"
-              onClick={voltarPagina}
-              className="btn btn-back"
-            >
-              Voltar para Home
-            </button>
-          </div>
-        </div>
       )}
 
       {mostrarHistórico && (
@@ -207,11 +176,26 @@ const FormularioMedidas = () => {
                   <td>{medida.quadril}</td>
                   <td>{medida.coxa}</td>
                   <td>{medida.braco}</td>
-
                 </tr>
               ))}
             </tbody>
           </table>
+        </div>
+      )}
+
+      {/* Gráfico é mostrado quando medidas são salvas */}
+      {!mostrarHistórico && medidas.length > 0 && (
+        <div>
+          <Grafico dados={medidas} />
+          <div className="buttons-container">
+            <button
+              type="button"
+              onClick={voltarPagina}
+              className="btn btn-back"
+            >
+              Voltar para Home
+            </button>
+          </div>
         </div>
       )}
     </div>
