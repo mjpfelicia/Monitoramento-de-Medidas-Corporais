@@ -8,7 +8,6 @@
 
 /* Formulário de Medidas */
 #formulario-medidas {
-  width: 60vw; /* Largura que se adapta à tela */
   max-width: 1300px; /* Limita a largura para telas grandes */
   padding: 2rem;
   background-color: var(--modal-bg-color);

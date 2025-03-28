@@ -6,8 +6,6 @@ import Footer from '../Footer/Footer';
 import IconeFitness from '../IconeFitness/IconeFitness'; 
 import './MonitoramentoMedidasCorporais.css';
 
-
-
 const MonitoramentoMedidasCorporiais = () => {
   const [showIcone, setShowIcone] = useState(true);
   const location = useLocation();

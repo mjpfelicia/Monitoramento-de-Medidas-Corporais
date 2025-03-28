@@ -20,7 +20,8 @@ const FormularioMedidas = () => {
     braco: ''
   }]);
   const [medidas, setMedidas] = useState([]);
-  const [mostrarHistórico, setMostrarHistórico] = useState(false);  // Controle do histórico
+  const [mostrarGrafico, setMostrarGrafico] = useState(false); // Gráfico inicializa como falso
+  const [mostrarHistórico, setMostrarHistórico] = useState(false); // Histórico inicializa como falso
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -58,7 +59,7 @@ const FormularioMedidas = () => {
       if (nextIndex < form.length) {
         form.elements[nextIndex].focus();
       } else {
-        salvarMedidas(); 
+        salvarMedidas();
       }
     }
   };
@@ -99,7 +100,7 @@ const FormularioMedidas = () => {
     const medidasSalvas = obterDados('medidas');
     if (medidasSalvas) {
       setMedidas(medidasSalvas);
-      setMostrarHistórico(!mostrarHistórico);  // Alterna entre mostrar e esconder o histórico
+      setMostrarHistórico(!mostrarHistórico);
     } else {
       toast.info('Nenhuma medida registrada ainda!', {
         position: "top-center",
@@ -112,41 +113,46 @@ const FormularioMedidas = () => {
     }
   };
 
+  const mostrarGraficoMedidas = () => {
+    setMostrarGrafico(true);  // Mostra o gráfico quando o usuário clica para ver o gráfico
+  };
+
   return (
     <div className="container-medidas">
-      {!mostrarHistórico && (
+      {!mostrarGrafico && !mostrarHistórico && (
         <form id="formulario-medidas">
-          <TabelaMedidas
-            linhas={linhas}
-            onInputChange={handleInputChange}
-            onKeyDown={handleKeyDown}
-          />
+          <TabelaMedidas linhas={linhas} onInputChange={handleInputChange} onKeyDown={handleKeyDown} />
           <div className="buttons-container">
-            <button
-              type="button"
-              onClick={adicionarLinha}
-              className="btn btn-add"
-            >
+            <button type="button" onClick={adicionarLinha} className="btn btn-add" >
               Adicionar Medidas
             </button>
-            <button
-              type="button"
-              onClick={salvarMedidas}
-              className="btn btn-save"
-            >
+            <button type="button" onClick={salvarMedidas} className="btn btn-save" >
               Salvar Medidas
             </button>
-            <button
-              type="button"
-              onClick={mostrarHistóricoMedidas}
-              className="btn btn-history">
+            <button type="button" onClick={mostrarHistóricoMedidas} className="btn btn-history">
               Ver Histórico
             </button>
+
             <div className="container-medidas">
               <ToastContainer />
             </div>
           </div>
         </form>
+      )}
+
+      {mostrarGrafico && (
+        <div>
+          <Grafico dados={medidas} />
+          <div className="buttons-container">
+            <button
+              type="button"
+              onClick={voltarPagina}
+              className="btn btn-back"
+            >
+              Voltar para Home
+            </button>
+          </div>
+        </div>
       )}
 
       {mostrarHistórico && (
@@ -180,22 +186,6 @@ const FormularioMedidas = () => {
               ))}
             </tbody>
           </table>
-        </div>
-      )}
-
-      {/* Gráfico é mostrado quando medidas são salvas */}
-      {!mostrarHistórico && medidas.length > 0 && (
-        <div>
-          <Grafico dados={medidas} />
-          <div className="buttons-container">
-            <button
-              type="button"
-              onClick={voltarPagina}
-              className="btn btn-back"
-            >
-              Voltar para Home
-            </button>
-          </div>
         </div>
       )}
     </div>

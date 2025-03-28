@@ -89,6 +89,7 @@
   cursor: pointer;
 }
 
+
 /* Ajustes para telas menores */
 @media (max-width: 600px) {
   .menu-nav ul {

@@ -1,10 +1,9 @@
 .imc-form-container {
+  max-width: var(--max-width);
+  margin: var(--spacing-medium) auto;
+  padding: var(--spacing-medium);
   background-color: var(--form-background-color);
   border-radius: var(--border-radius-medium);
-  padding: var(--spacing-medium);
-  max-width: var(--max-width);
-  width: 100%;
-  border: 1px solid var(--form-border-color);
   box-shadow: 0 4px 8px var(--form-box-shadow);
 }
 
