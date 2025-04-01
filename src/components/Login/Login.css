@@ -1,16 +1,25 @@
 :root {
   --error-message-color: red;
+  --max-width: 100%;
+  --table-border-color: #ccc;
+  --modal-box-shadow: rgba(0, 0, 0, 0.1);
+  --modal-bg-color: #f9f9f9;
+  --heading-color: #333;
+  --background-color: #fff;
+  --button-bg-color: #4285F4;
+  --button-text-color: white;
+  --button-hover-bg-color-alt: #357abd;
+  --text-color: #666;
 }
 
 /* Login.css */
 .login-container {
-  max-width: var(--max-width);
+  padding: 20px;
+  max-width: 400px;
   margin: 0 auto;
-  padding: 2rem;
-  border: 1px solid var(--table-border-color);
-  border-radius: 12px;
-  box-shadow: 0 10px 20px var(--modal-box-shadow);
   background-color: var(--modal-bg-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   text-align: center;
 }
@@ -98,9 +107,9 @@
   font-weight: bold;
 }
 
-
+/* Estilos para o botão de login com Google */
 .google-login-button {
-  background-color: #4285f4;
+  background-color: #4285F4;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -115,18 +124,6 @@
   background-color: #357abd;
 }
 
-
-/* Exemplo de estilo para o botão de login */
-.google-login-button {
-  padding: 10px 20px;
-  background-color: #4285F4;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
 .google-login-button:disabled {
   background-color: #dcdcdc;
   cursor: not-allowed;
@@ -135,14 +132,58 @@
 /* Exibir as informações do usuário */
 .user-info {
   margin-top: 20px;
-  padding: 10px;
+  padding: 15px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
   border: 1px solid #ddd;
-  border-radius: 5px;
-  background-color: #f9f9f9;
 }
 
 .user-info img {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
+  object-fit: cover;
+  margin-top: 10px;
+}
+
+.user-info h3 {
+  margin-bottom: 10px;
+}
+
+.user-info p {
+  font-size: 14px;
+  color: #333;
+  margin: 5px 0;
+}
+
+/* Painel Lateral para as informações do usuário */
+.user-info {
+  position: fixed;
+  right: 0;
+  top: 20px;
+  width: 250px;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-info h3 {
+  margin-bottom: 10px;
+}
+
+.user-info img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-top: 10px;
+}
+
+.user-info p {
+  font-size: 14px;
+  color: #333;
+  margin: 5px 0;
 }

@@ -67,6 +67,17 @@ input[type="number"]:focus {
   transition: opacity 0.3s ease-out;
 }
 
+/* Estilo do Footer */
+.footer {
+  background-color: var(--menu-background-color);
+  padding: 1rem;
+  color: var(--menu-link-color);
+  text-align: center;
+  margin-top: auto; /* Coloca o footer na parte inferior */
+  position: relative;
+  width: 100%;
+}
+
 /* === RESPONSIVIDADE === */
 @media (max-width: 600px) {
   /* Adicionando estilo para dispositivos móveis */
@@ -110,13 +121,3 @@ input[type="number"]:focus {
   }
 }
 
-/* Estilo do Footer */
-.footer {
-  background-color: var(--menu-background-color);
-  padding: 1rem;
-  color: var(--menu-link-color);
-  text-align: center;
-  margin-top: auto; /* Coloca o footer na parte inferior */
-  position: relative;
-  width: 100%;
-}

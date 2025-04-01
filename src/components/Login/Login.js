@@ -17,8 +17,8 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 
-const Login = () => {
-  const [user, setUser] = useState(null);  // Estado para armazenar as informações do usuário
+const Login = ({ onLoginSuccess }) => {
+  const [user, setUser] = useState(null);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -28,14 +28,16 @@ const Login = () => {
       setLoading(true);
       const result = await signInWithPopup(auth, googleProvider);
       const userData = result.user;
-      console.log('Login com Google realizado com sucesso:', userData);
 
-      const { photoURL, displayName, email, phoneNumber } = userData?.providerData?.[0];
-      setUser({ photoURL, displayName, email, phoneNumber });  // Atualiza o estado com os dados do usuário
-
-      navigate('/formulario');
+      const { photoURL, displayName, email, phoneNumber } = userData || {};
+      if (displayName && email) {
+        setUser({ photoURL, displayName, email, phoneNumber });
+        onLoginSuccess({ displayName, email, photoURL });
+        navigate('/formulario');
+      } else {
+        throw new Error('Informações do usuário não encontradas.');
+      }
     } catch (error) {
-      console.error("Erro ao fazer login com Google:", error);
       setError('Erro ao fazer login com Google: ' + error.message);
     } finally {
       setLoading(false);
@@ -48,7 +50,6 @@ const Login = () => {
 
       {error && <p className="error-message">{error}</p>}
 
-      {/* Botão de Login do Google */}
       <button
         type="button"
         onClick={handleGoogleLogin}
@@ -62,7 +63,6 @@ const Login = () => {
         Não tem uma conta? <Link to="/registrar">Clique aqui para registrar</Link>
       </p>
 
-      {/* Exibir as informações do usuário após o login */}
       {user && (
         <div className="user-info">
           <h3>Informações do Usuário:</h3>
