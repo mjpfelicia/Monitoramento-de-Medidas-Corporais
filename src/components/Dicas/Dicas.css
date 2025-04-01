@@ -1,52 +1,5 @@
 /* Dicas.css */
 
-/* Usando as variáveis definidas em :root */
-:root {
-  --font-family: Arial, sans-serif;
-  --background-color: #f9f9f9;
-  --text-color: #333;
-  --heading-color: #0056b3;
-  --table-border-color: #ddd;
-  --table-header-bg-color: #f2f2f2;
-  --input-padding: 0.5rem;
-  --table-padding: 0.625rem;
-  --container-width: 90%;
-  --max-width: 50rem;
-  --table-font-size: 1rem;
-  --button-bg-color: #4CAF50;
-  --button-hover-bg-color: #45a049;
-  --button-text-color: #fff;
-  --button-hover-text-color: #fff;
-  --modal-bg-color: #fff;
-  --modal-box-shadow: rgba(0, 0, 0, 0.1);
-  --menu-hover-color: #007bff;
-  --menu-background-color: #333;
-  --menu-link-color: white;
-  --button-hover-bg-color-alt: #003f7f;
-  --form-border-color: #e3e3e3;
-  --form-box-shadow: rgba(0, 0, 0, 0.1);
-  --form-background-color: #ffffff;
-  --input-border-color: #ccc;
-  --input-focus-border-color: #007bff;
-  --input-background-color: #f9f9f9;
-  --error-message-color: red;
-
-  /* Novas variáveis sugeridas para flexibilidade */
-  --font-size-base: 16px;
-  --font-size-large: 18px;
-  --font-size-small: 14px;
-  --spacing-small: 0.5rem;
-  --spacing-medium: 1rem;
-  --spacing-large: 2rem;
-  --success-color: #28a745;
-  --warning-color: #ffc107;
-  --info-color: #17a2b8;
-  --danger-color: #dc3545;
-  --border-radius-small: 4px;
-  --border-radius-medium: 8px;
-  --border-radius-large: 12px;
-}
-
 /* Dicas Section */
 .dicas-section {
   padding: var(--spacing-large);

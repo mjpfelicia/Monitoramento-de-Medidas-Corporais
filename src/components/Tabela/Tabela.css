@@ -19,11 +19,6 @@ th {
     background-color: var(--table-header-bg-color);
 }
 
-/* input[type="text"], input[type="number"] {
-    width: 100%;
-    padding: var(--input-padding);
-    box-sizing: border-box;
-} */
 
 button {
     display: block;

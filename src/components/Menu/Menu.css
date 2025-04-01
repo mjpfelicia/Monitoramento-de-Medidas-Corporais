@@ -29,9 +29,9 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 1rem;
-  padding: 0.75rem;
+  gap: var(--spacing-small);
+  font-size: var(--font-size-base);
+  padding: var(--spacing-small);
   color: var(--menu-link-color);
 }
 
@@ -39,14 +39,14 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background: #333;
-  color: #fff;
-  box-shadow: 0px 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
-  border-radius: 0.3125rem;
+  background: var(--menu-background-color);
+  color: var(--menu-link-color);
+  box-shadow: 0px var(--spacing-small) var(--spacing-medium) var(--form-box-shadow);
+  border-radius: var(--border-radius-small);
   list-style: none;
-  padding: 0.625rem 0;
+  padding: var(--spacing-small) 0;
   margin: 0;
-  width: 20rem; /* Ajustado para rem */
+  width: 20rem;
   display: none;
   flex-direction: column;
   z-index: 10;
@@ -58,19 +58,19 @@
 }
 
 .dropdown-menu li {
-  padding: 0.75rem 1rem; /* Ajustado para rem */
+  padding: var(--spacing-small) var(--spacing-medium);
   white-space: nowrap;
 }
 
 .dropdown-menu li a {
-  color: #fff;
+  color: var(--menu-link-color);
   text-decoration: none;
   display: block;
-  font-size: 1rem;
+  font-size: var(--font-size-base);
 }
 
 .dropdown-menu li:hover {
-  background: #555;
+  background: var(--button-hover-bg-color-alt);
 }
 
 .logout-button:hover,
@@ -83,12 +83,11 @@
   display: none;
   background-color: var(--menu-background-color);
   color: var(--menu-link-color);
-  font-size: 1.2rem;
+  font-size: var(--font-size-large);
   border: none;
-  padding: 1rem;
+  padding: var(--spacing-medium);
   cursor: pointer;
 }
-
 
 /* Ajustes para telas menores */
 @media (max-width: 600px) {
@@ -115,5 +114,6 @@
   .menu-nav ul li button {
     width: 100%;
     text-align: left;
+    padding: var(--spacing-medium);
   }
 }

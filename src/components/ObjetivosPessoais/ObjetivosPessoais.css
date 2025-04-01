@@ -2,18 +2,18 @@
 #formulario-objetivos {
     margin: 0 auto;
     width: 80%;  /* Largura que se adapta à tela */
-    max-width: 1300px;  /* Limita a largura para telas grandes */
-    padding: 2rem;
+    max-width: var(--max-width);  /* Limita a largura para telas grandes */
+    padding: var(--spacing-large);
     background-color: var(--modal-bg-color);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);  /* Sombra mais suave e moderna */
-    border-radius: 1rem;  /* Bordas arredondadas */
-    font-family: 'Poppins', sans-serif;  /* Fonte moderna */
+    box-shadow: 0 10px 20px var(--form-box-shadow);  /* Sombra suave e moderna */
+    border-radius: var(--border-radius-large);
+    font-family: var(--font-family);
     color: var(--text-color);
     position: relative;
     top: auto;
-    margin-top: 3rem; 
-    margin-bottom: 3rem; /* Maior espaçamento no topo */
-    transition: all 0.3s ease;  /* Transição suave para qualquer alteração */
+    margin-top: var(--spacing-large);
+    margin-bottom: var(--spacing-large); /* Maior espaçamento no topo */
+    transition: all 0.3s ease;
 }
 
 #formulario-objetivos:hover {
@@ -24,16 +24,15 @@
 .medidas-exibidas,
 .diferencas-exibidas,
 .porcentagens-exibidas {
-    margin-top: 20px;
+    margin-top: var(--spacing-medium);
     background-color: var(--background-color);
-    padding: 20px;
-    border-radius: 10px;
+    padding: var(--spacing-medium);
+    border-radius: var(--border-radius-medium);
     color: var(--text-color);
     text-align: justify;
-    transition: background-color 0.3s ease;  /* Transição suave para o fundo */
+    transition: background-color 0.3s ease;
 }
 
-/* Alteração de cor no hover */
 .objetivos-exibidos:hover {
     background-color: #f0f0f0;
 }
@@ -44,108 +43,106 @@
 }
 
 .campo-objetivo:hover {
-    transform: scale(1.05);  /* Efeito de aumento ao passar o mouse */
+    transform: scale(1.05);
 }
 
 #formulario-objetivos h2, h3 {
     color: var(--heading-color);
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
+    margin-bottom: var(--spacing-medium);
+    font-size: var(--font-size-subheader);
     font-weight: 600;
 }
 
 /* Estilo do botão */
 #formulario-objetivos button {
-    margin-top: 20px;
-    padding: 0.8rem 1.5rem;
+    margin-top: var(--spacing-medium);
+    padding: var(--spacing-small) var(--spacing-medium);
     background-color: var(--button-bg-color);
     color: var(--button-text-color);
     border: none;
     cursor: pointer;
-    font-family: 'Poppins', sans-serif;
-    border-radius: 25px;  /* Bordas arredondadas para o botão */
+    font-family: var(--font-family);
+    border-radius: var(--border-radius-large);  /* Bordas arredondadas para o botão */
     font-weight: 500;
-    transition: all 0.3s ease;  /* Transição suave ao passar o mouse */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px var(--form-box-shadow);
 }
 
 #formulario-objetivos button:hover {
     background-color: var(--button-hover-bg-color);
-    transform: translateY(-3px);  /* Efeito de "subir" o botão ao passar o mouse */
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);  /* Aumenta a sombra para criar a sensação de elevação */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Títulos */
 #formulario-objetivos h3 {
     color: var(--heading-color);
     text-align: center;
-    font-size: 1.3rem;
+    font-size: var(--font-size-large);
 }
 
 /* Estilo de exibição de objetivos */
 .objetivos-exibidos {
-    margin-top: 20px;
-    padding: 20px;
-    border-radius: 12px;
-    transition: transform 0.3s ease;  /* Animação de transformação */
+    margin-top: var(--spacing-medium);
+    padding: var(--spacing-medium);
+    border-radius: var(--border-radius-medium);
+    transition: transform 0.3s ease;
 }
 
 .objetivos-exibidos:hover {
-    transform: translateY(-5px);  /* Efeito de elevação */
+    transform: translateY(-5px);
 }
 
-
 .diferenca {
-    font-size: 0.9rem;
+    font-size: var(--font-size-small);
     font-weight: bold;
-    margin-left: 10px;
-  }
-  
-  .positivo {
-    color: green;
-  }
-  
-  .negativo {
-    color: red;
-  }
-  
+    margin-left: var(--spacing-small);
+}
+
+.positivo {
+    color: var(--success-color);
+}
+
+.negativo {
+    color: var(--danger-color);
+}
 
 /* Responsividade para tablets (max-width: 768px) */
 @media (max-width: 768px) {
     #formulario-objetivos {
-        width: 90%;  /* Largura mais fluida em telas médias */
-        padding: 1.5rem;
+        width: 90%;  
+        padding: var(--spacing-medium);
     }
 
     #formulario-objetivos h2, h3 {
-        font-size: 1.25rem;
+        font-size: var(--font-size-base);
     }
 
     #formulario-objetivos button {
-        width: 100%;  /* Tornando o botão responsivo */
+        width: 100%;
     }
 
     .exibidos {
-        padding: 15px;
+        padding: var(--spacing-small);
     }
 }
 
 /* Responsividade para telas pequenas (max-width: 480px) */
 @media (max-width: 480px) {
     #formulario-objetivos {
-        width: 95%;  /* Ajuste para telas menores */
-        padding: 1rem;
+        width: 95%;
+        padding: var(--spacing-small);
     }
 
     #formulario-objetivos h2 {
-        font-size: 1.1rem;
+        font-size: var(--font-size-small);
     }
 
     #formulario-objetivos h3 {
-        font-size: 1rem;
+        font-size: var(--font-size-base);
     }
 
     #formulario-objetivos button {
-        padding: 0.8rem;
+        padding: var(--spacing-small);
     }
 }

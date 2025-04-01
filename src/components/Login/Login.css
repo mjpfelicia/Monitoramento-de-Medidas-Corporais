@@ -1,54 +1,54 @@
 /* Estilo do container de login */
 .login-container {
-  padding: 20px;
-  background-color: #f7fafc;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: var(--spacing-medium);
+  background-color: var(--form-background-color);
+  border-radius: var(--border-radius-medium);
+  box-shadow: 0 4px 6px var(--form-box-shadow);
   max-width: 400px;
   margin: 0 auto;
   text-align: center;
 }
 
 .login-container h2 {
-  font-size: 24px;
-  color: #2d3748;
-  margin-bottom: 20px;
+  font-size: var(--font-size-large);
+  color: var(--heading-color);
+  margin-bottom: var(--spacing-medium);
 }
 
 .google-login-button {
   width: 100%;
-  padding: 12px;
-  background-color: #4285f4;
-  color: white;
-  font-size: 16px;
+  padding: var(--spacing-small);
+  background-color: var(--info-color);
+  color: var(--button-text-color);
+  font-size: var(--font-size-base);
   font-weight: bold;
   border: none;
-  border-radius: 4px;
+  border-radius: var(--border-radius-small);
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .google-login-button:hover {
-  background-color: #357ae8;
+  background-color: var(--button-hover-bg-color-alt);
 }
 
 .google-login-button:disabled {
-  background-color: #a0aec0;
+  background-color: var(--input-border-color);
   cursor: not-allowed;
 }
 
 .error-message {
-  color: #e53e3e;
-  margin: 10px 0;
+  color: var(--danger-color);
+  margin: var(--spacing-small) 0;
 }
 
 p {
-  margin-top: 15px;
-  font-size: 14px;
+  margin-top: var(--spacing-small);
+  font-size: var(--font-size-small);
 }
 
 a {
-  color: #3182ce;
+  color: var(--menu-hover-color);
 }
 
 a:hover {
