@@ -6,6 +6,7 @@ import FormularioMedidas from './components/FormularioMedidas/FormularioMedidas'
 import ObjetivosPessoais from './components/ObjetivosPessoais/ObjetivosPessoais';
 import Grafico from './components/Grafico/Grafico';
 import Login from './components/Login/Login';
+import UserInfo from './components/UserProfile/UserProfile';
 import Registrar from './components/Registrar/Register';
 import Ajuda from './components/Ajuda/Ajuda';
 import IMCForm from './components/IMCForm/IMCForm';
@@ -26,6 +27,7 @@ function App() {
             <Route path="/objetivos" element={<ObjetivosPessoais />} />
             <Route path="/formulario" element={<FormularioMedidas />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/user-info" element={<UserInfo />} /> {/* Adicionei esta rota para o UserInfo */}
             <Route path="/registrar" element={<Registrar />} />
             <Route path="/ajuda" element={<Ajuda />} />
             <Route path="/dicas" element={<Dicas />} />
