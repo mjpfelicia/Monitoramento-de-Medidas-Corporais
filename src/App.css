@@ -1,56 +1,75 @@
 :root {
+  /* Tipografia */
   --font-family: Arial, sans-serif;
+  --font-size-base: 1rem; /* 16px */
+  --font-size-large: 1.125rem; /* 18px */
+  --font-size-small: 0.875rem; /* 14px */
+  
+  /* Cores principais */
   --background-color: #f9f9f9;
   --text-color: #333;
   --heading-color: #0056b3;
   --table-border-color: #ddd;
   --table-header-bg-color: #f2f2f2;
-  --input-padding: 0.5rem;
-  --table-padding: 0.625rem;
-  --container-width: 90%;
-  --max-width: 50rem;
-  --table-font-size: 1rem;
-  --button-bg-color: #4CAF50;
-  --button-hover-bg-color: #45a049;
-  --button-text-color: #fff;
-  --button-hover-text-color: #fff;
-  --modal-bg-color: #fff;
-  --modal-box-shadow: rgba(0, 0, 0, 0.1);
-  --menu-hover-color: #007bff;
-  --menu-background-color: #333;
-  --menu-link-color: white;
-  --button-hover-bg-color-alt: #003f7f;
-  --form-border-color: #e3e3e3;
-  --form-box-shadow: rgba(0, 0, 0, 0.1);
-  --form-background-color: #ffffff;
-  --input-border-color: #ccc;
-  --input-focus-border-color: #007bff;
-  --input-background-color: #f9f9f9;
-  --error-message-color: red;
-
-  /* Novas variáveis sugeridas para flexibilidade */
   
-  /* Tipografia */
-  --font-size-base: 16px;
-  --font-size-large: 18px;
-  --font-size-small: 14px;
-  
-  /* Espaçamentos */
-  --spacing-small: 0.5rem;
-  --spacing-medium: 1rem;
-  --spacing-large: 2rem;
-  
-  /* Cores adicionais para o design */
+  /* Cores adicionais */
   --success-color: #28a745;
   --warning-color: #ffc107;
   --info-color: #17a2b8;
   --danger-color: #dc3545;
 
+  /* Bordas */
+  --input-border-color: #ccc;
+  --input-focus-border-color: #007bff;
+  --form-border-color: #e3e3e3;
+
+  /* Background */
+  --input-background-color: #f9f9f9;
+  --form-background-color: #ffffff;
+  --modal-bg-color: #fff;
+
+  /* Cores de botão */
+  --button-bg-color: #4CAF50;
+  --button-hover-bg-color: #45a049;
+  --button-text-color: #fff;
+  --button-hover-text-color: #fff;
+  --button-hover-bg-color-alt: #003f7f;
+
+  /* Mensagens de erro */
+  --error-message-color: red;
+
+  /* Espaçamentos */
+  --spacing-small: 0.5rem; /* 8px */
+  --spacing-medium: 1rem; /* 16px */
+  --spacing-large: 2rem; /* 32px */
+
   /* Tamanhos de borda */
-  --border-radius-small: 4px;
-  --border-radius-medium: 8px;
-  --border-radius-large: 12px;
+  --border-radius-small: 0.25rem; /* 4px */
+  --border-radius-medium: 0.5rem; /* 8px */
+  --border-radius-large: 0.75rem; /* 12px */
+
+  /* Tamanho máximo do container */
+  --container-width: 90%;
+  --max-width: 50rem; /* 800px */
+  
+  /* Fontes para tabelas e textos */
+  --table-font-size: 1rem; /* 16px */
+  --table-padding: 0.625rem; /* 10px */
+  --input-padding: 0.5rem; /* 8px */
+
+  /* Sombreamento de formulários */
+  --form-box-shadow: rgba(0, 0, 0, 0.1);
+
+  /* Menu */
+  --menu-hover-color: #007bff;
+  --menu-background-color: #333;
+  --menu-link-color: white;
+
+  /* Tamanhos de fontes para cabeçalhos e parágrafos */
+  --font-size-header: 2rem; /* 32px */
+  --font-size-subheader: 1.5rem; /* 24px */
 }
+
 
 * {
   margin: 0;
