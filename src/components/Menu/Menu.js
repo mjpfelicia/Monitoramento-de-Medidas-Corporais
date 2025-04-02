@@ -5,12 +5,7 @@ import { FaChartBar, FaBullseye, FaWpforms, FaSignInAlt, FaSignOutAlt, FaChevron
 import './Menu.css';
 
 const menuItems = [
-  {
-    name: "Perfil do Usuário", icon: <FaUser />, links: [
-      { path: "/user-info", label: "Perfil do Usuário" },
-    ]
-  },
-  
+    
   {
     name: "Gráficos", icon: <FaChartBar />, links: [
       { path: "/grafico", label: "Ver Gráfico de Medidas" }
@@ -29,7 +24,12 @@ const menuItems = [
       { path: "/composicao-corporal", label: "Análise de Composição Corporal" },
       { path: "/calculo-macronutrientes", label: "Calcular Macronutrientes e Calorias" }
     ]
-  }
+  },
+  {
+    name: "Perfil do Usuário", icon: <FaUser />, links: [
+      { path: "/user-info", label: "Perfil do Usuário" },
+    ]
+  },
 ];
 
 const Menu = ({ isAuthenticated, userName, handleLogout, setShowIcone }) => {
