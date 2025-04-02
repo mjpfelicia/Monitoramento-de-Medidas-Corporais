@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaChartBar, FaBullseye, FaWpforms, FaSignInAlt, FaSignOutAlt, FaChevronDown } from 'react-icons/fa';
+import { FaChartBar, FaBullseye, FaWpforms, FaSignInAlt, FaSignOutAlt, FaChevronDown, FaUser } from 'react-icons/fa';
+
 import './Menu.css';
 
 const menuItems = [
+  {
+    name: "Perfil do Usuário", icon: <FaUser />, links: [
+      { path: "/user-info", label: "Perfil do Usuário" },
+    ]
+  },
+  
   {
     name: "Gráficos", icon: <FaChartBar />, links: [
       { path: "/grafico", label: "Ver Gráfico de Medidas" }

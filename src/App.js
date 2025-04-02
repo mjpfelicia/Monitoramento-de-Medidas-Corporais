@@ -27,7 +27,7 @@ function App() {
             <Route path="/objetivos" element={<ObjetivosPessoais />} />
             <Route path="/formulario" element={<FormularioMedidas />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/user-info" element={<UserInfo />} /> {/* Adicionei esta rota para o UserInfo */}
+            <Route path="/user-info" element={<UserInfo />} />
             <Route path="/registrar" element={<Registrar />} />
             <Route path="/ajuda" element={<Ajuda />} />
             <Route path="/dicas" element={<Dicas />} />
